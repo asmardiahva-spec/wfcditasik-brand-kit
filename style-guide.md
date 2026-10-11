@@ -4,18 +4,22 @@ The look: **a café worker's scrapbook.** Real photos, paper, tape, phone-screen
 
 ## Colors
 
+Palette: **Blood Red, Ruddy Pink, Light Goldenrod Yellow** (cherry pie at a diner).
+
 | Name | Hex | Use |
 |---|---|---|
-| Maroon | `#7A1C1C` | Main text, handles, full-color statement slides (official brand maroon) |
-| Maroon dark | `#4A1219` | Text on matcha backgrounds |
-| Matcha | `#B5C48A` | Marker highlight, checker, stripes |
-| Matcha soft | `#D5E0BC` | Selected-text highlight, soft backgrounds (official brand matcha) |
-| Olive | `#5F6B33` | Small labels, widgets, accents |
-| Cream | `#F5EFE4` | Base background |
-| Paper | `#FBF8F2` | Cards, notes, polaroids |
-| Ink | `#2B1B18` | Cursor, rare dark details |
+| Blood Red | `#660005` | Main text, handles, full-color statement slides |
+| Red dark | `#3F0003` | Text on pink backgrounds, rare deep accents |
+| Ruddy Pink | `#DF8F9C` | Marker highlight, checker, stripes, tape |
+| Pink soft | `#F2C9CF` | Selected-text highlight, soft backgrounds |
+| Rose | `#A3404F` | Small labels, widgets, accents |
+| Light Goldenrod Yellow | `#FAF4D4` | Base background |
+| Paper | `#FFFBEA` | Cards, notes, polaroids |
+| Ink | `#2B0A0C` | Cursor, rare dark details |
 
-Rule: maroon text on cream or paper. Never maroon text directly on matcha checker; put it on a paper scrap first.
+Contrast with Blood Red text: on yellow 12.1:1, on paper 12.9:1, on pink soft 9.0:1, on Ruddy Pink 5.5:1 (all readable).
+
+Rule: Blood Red text on yellow or paper. Never Blood Red text directly on a checker or stripes; put it on a paper scrap first. On a solid Blood Red slide, use yellow or pink soft text.
 
 ## Fonts (in `/fonts`, all free, OFL license)
 
@@ -28,15 +32,15 @@ Rule: maroon text on cream or paper. Never maroon text directly on matcha checke
 Two styles only. See `highlights/png/highlight-styles.png`.
 
 **A. Marker (default)**
-- Matcha band behind the text, never on top of it (text layer above the band).
+- Ruddy Pink band behind the text, never on top of it (text layer above the band).
 - Band covers only the lower part of the letters: top at about 30% of font size above the baseline, height about 36% of font size.
 - One band per line. If a phrase wraps, each line gets its own band, the width of that line only.
 - Side padding 6 to 10 px. The band never extends past the last letter.
 - Line spacing at least 1.15 so bands never touch the line above or below.
 
 **B. Selected text (signature, max once per carousel)**
-- Matcha-soft block from cap height to just under the descenders.
-- Maroon handles: left handle dot on top, right handle dot on the bottom (`ui-stickers/selection-handle-*`).
+- Pink-soft block from cap height to just under the descenders.
+- Blood Red handles: left handle dot on top, right handle dot on the bottom (`ui-stickers/selection-handle-*`).
 - Only for one short phrase (1 to 3 words) on a single line. Never on wrapped text.
 - Leave a clear gap between the left handle and the word before it.
 
@@ -45,12 +49,12 @@ Two styles only. See `highlights/png/highlight-styles.png`.
 ## Backgrounds (`/backgrounds`, 1080 × 1350)
 
 Rotate, never the same background twice in a row:
-grid paper · matcha checker · maroon checker · matcha stripes · maroon stripes · solid cream · solid maroon (one big statement) · dashed card on maroon/matcha (for quotes) · your own photo.
+grid paper · pink checker · red checker · pink stripes · red stripes · solid yellow · solid red (one big statement) · dashed card on red/pink (for quotes) · your own photo.
 
 ## Stickers and paper
 
 - `ui-stickers/`: copy bar, selection handles, notification pill, folder, Tasik weather widget, reminders card, wifi pill, cursor, polaroid frame.
-- `paper/`: washi tape (matcha, maroon, kraft), lined note, torn strip.
+- `paper/`: washi tape (pink, red, kraft), lined note, torn strip.
 - `photo-stickers/`: your own cut-out photos from WFC sessions (kopi, laptop, notebook, charger). This is what makes the feed feel local.
 - Max 3 to 4 stickers per slide. Overlap edges a little, tilt between -8° and 8°.
 

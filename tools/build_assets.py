@@ -1,16 +1,17 @@
-"""Generate WFCditasik brand kit SVGs + PNG exports."""
+"""Generate WFCditasik brand kit SVGs + PNG exports.
+Palette: Blood Red #660005, Ruddy Pink #DF8F9C, Light Goldenrod Yellow #FAF4D4."""
 import os, sys, cairosvg
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-MAROON = "#7A1C1C"
-MAROON_DK = "#4A1219"
-MATCHA = "#B5C48A"
-MATCHA_SOFT = "#D5E0BC"
-OLIVE = "#5F6B33"
-CREAM = "#F5EFE4"
-PAPER = "#FBF8F2"
-INK = "#2B1B18"
-GRID = "#E3DACB"
+MAROON = "#660005"
+MAROON_DK = "#3F0003"
+PINK = "#DF8F9C"
+PINK_SOFT = "#F2C9CF"
+ROSE = "#A3404F"
+CREAM = "#FAF4D4"
+PAPER = "#FFFBEA"
+INK = "#2B0A0C"
+GRID = "#EADFB4"
 
 SANS = "Helvetica, Arial, sans-serif"
 SERIF = "'Instrument Serif', Georgia, serif"
@@ -83,15 +84,15 @@ def dashed_frame(bg, card, dash):
 
 
 save("backgrounds/svg/grid-paper-cream.svg", grid_paper())
-save("backgrounds/svg/checker-matcha-cream.svg", checker(CREAM, MATCHA))
-save("backgrounds/svg/checker-maroon-cream.svg", checker(CREAM, MAROON))
-save("backgrounds/svg/stripes-matcha.svg", stripes(CREAM, MATCHA))
-save("backgrounds/svg/stripes-maroon.svg", stripes(CREAM, MAROON, 26))
-save("backgrounds/svg/solid-maroon.svg", solid(MAROON))
+save("backgrounds/svg/checker-pink-cream.svg", checker(CREAM, PINK))
+save("backgrounds/svg/checker-red-cream.svg", checker(CREAM, MAROON))
+save("backgrounds/svg/stripes-pink.svg", stripes(CREAM, PINK))
+save("backgrounds/svg/stripes-red.svg", stripes(CREAM, MAROON, 26))
+save("backgrounds/svg/solid-red.svg", solid(MAROON))
 save("backgrounds/svg/solid-cream.svg", solid(CREAM))
-save("backgrounds/svg/dashed-card-on-matcha.svg",
-     dashed_frame(MATCHA_SOFT, PAPER, MAROON))
-save("backgrounds/svg/dashed-card-on-maroon.svg", dashed_frame(MAROON, CREAM, MATCHA))
+save("backgrounds/svg/dashed-card-on-pink.svg",
+     dashed_frame(PINK_SOFT, PAPER, MAROON))
+save("backgrounds/svg/dashed-card-on-red.svg", dashed_frame(MAROON, CREAM, PINK))
 
 # ---------------- UI STICKERS ----------------
 
@@ -130,30 +131,30 @@ art = (f'<rect width="{pw}" height="{ph}" rx="28" fill="{PAPER}"/>'
        f'<text x="116" y="82" font-family="{SANS}" font-size="22" fill="{INK}">Kopi sudah siap. Laptop kamu?</text>')
 save("ui-stickers/svg/notification-pill.svg", sticker(pw, ph, {"outline": outline, "art": art}))
 
-# 4. Folder (matcha)
+# 4. Folder (pink)
 fw, fh = 240, 180
 folder_path = f"M0 30 Q0 14 16 14 H86 Q96 14 102 24 L110 36 H{fw-16} Q{fw} 36 {fw} 52 V{fh-16} Q{fw} {fh} {fw-16} {fh} H16 Q0 {fh} 0 {fh-16}Z"
 outline = f'<path d="{folder_path}"/>'
-art = (f'<path d="{folder_path}" fill="{OLIVE}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{MATCHA}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="10" fill="{MATCHA_SOFT}" opacity="0.6"/>')
-save("ui-stickers/svg/folder-matcha.svg", sticker(fw, fh, {"outline": outline, "art": art}))
+art = (f'<path d="{folder_path}" fill="{ROSE}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{PINK}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="10" fill="{PINK_SOFT}" opacity="0.6"/>')
+save("ui-stickers/svg/folder-pink.svg", sticker(fw, fh, {"outline": outline, "art": art}))
 
 # 5. Weather-style widget, Tasik version
 ww, wh = 360, 190
 outline = f'<rect width="{ww}" height="{wh}" rx="26"/>'
-art = (f'<rect width="{ww}" height="{wh}" rx="26" fill="{OLIVE}"/>'
+art = (f'<rect width="{ww}" height="{wh}" rx="26" fill="{ROSE}"/>'
        f'<text x="24" y="40" font-family="{SANS}" font-size="20" fill="{CREAM}">Tasikmalaya</text>'
        f'<text x="20" y="118" font-family="{SANS}" font-size="74" fill="{CREAM}">27°</text>'
        f'<text x="{ww-24}" y="40" font-family="{SANS}" font-size="20" fill="{CREAM}" text-anchor="end">Hujan sore</text>'
-       f'<text x="{ww-24}" y="68" font-family="{SANS}" font-size="18" fill="{MATCHA_SOFT}" text-anchor="end">cocok buat WFC</text>'
-       + "".join(f'<circle cx="{40+i*56}" cy="160" r="9" fill="{MATCHA_SOFT if i<3 else CREAM}"/>' for i in range(6)))
+       f'<text x="{ww-24}" y="68" font-family="{SANS}" font-size="18" fill="{PINK_SOFT}" text-anchor="end">cocok buat WFC</text>'
+       + "".join(f'<circle cx="{40+i*56}" cy="160" r="9" fill="{PINK_SOFT if i<3 else CREAM}"/>' for i in range(6)))
 save("ui-stickers/svg/widget-weather-tasik.svg", sticker(ww, wh, {"outline": outline, "art": art}))
 
 # 6. Reminders / to-do card
 rw, rh = 220, 220
 outline = f'<rect width="{rw}" height="{rh}" rx="48"/>'
-dots = [MAROON, OLIVE, MATCHA]
+dots = [MAROON, ROSE, PINK]
 art = f'<rect width="{rw}" height="{rh}" rx="48" fill="{PAPER}"/>' + "".join(
     f'<circle cx="54" cy="{58+i*52}" r="14" fill="none" stroke="{c}" stroke-width="5"/>'
     f'<circle cx="54" cy="{58+i*52}" r="7" fill="{c}"/>'
@@ -169,7 +170,7 @@ wifi = (f'<g transform="translate(36,20)" fill="none" stroke="{CREAM}" stroke-wi
 art = (f'<rect width="{sw}" height="{sh}" rx="38" fill="{MAROON}"/>' + wifi +
        f'<text x="104" y="48" font-family="{SANS}" font-size="22" fill="{CREAM}">wifi kencang</text>'
        f'<rect x="246" y="26" width="44" height="24" rx="6" fill="none" stroke="{CREAM}" stroke-width="3"/>'
-       f'<rect x="250" y="30" width="30" height="16" rx="3" fill="{MATCHA}"/>'
+       f'<rect x="250" y="30" width="30" height="16" rx="3" fill="{PINK}"/>'
        f'<rect x="292" y="33" width="4" height="10" rx="2" fill="{CREAM}"/>')
 save("ui-stickers/svg/status-wifi-battery.svg", sticker(sw, sh, {"outline": outline, "art": art}))
 
@@ -195,8 +196,8 @@ def tape(color, name):
     save(f"paper/svg/tape-{name}.svg", svg(tw, th, f'<path d="{d}" fill="{color}" opacity="0.82"/>'))
 
 
-tape(MATCHA, "matcha")
-tape(MAROON, "maroon")
+tape(PINK, "pink")
+tape(MAROON, "red")
 tape("#E8DCC6", "kraft")
 
 # 11. Note paper scrap (lined) and torn-edge strip
@@ -233,7 +234,7 @@ def marker_line(x, base, parts, size=96, pad=8):
     """Marker band: from ~x-height middle to just under baseline. Never reaches other lines."""
     w = tw(parts)
     top, h = base - size * 0.30, size * 0.36
-    return (f'<rect x="{x-pad}" y="{top:.1f}" width="{w+pad*2:.1f}" height="{h:.1f}" rx="3" fill="{MATCHA}"/>'
+    return (f'<rect x="{x-pad}" y="{top:.1f}" width="{w+pad*2:.1f}" height="{h:.1f}" rx="3" fill="{PINK}"/>'
             f'<text x="{x}" y="{base}" font-family="{SERIF}" font-size="{size}" fill="{MAROON}">{tspans(parts)}</text>')
 
 
@@ -242,7 +243,7 @@ def selected_line(x, base, parts, size=96, pad=10):
     w = tw(parts) + pad * 2
     top, h = base - size * 0.78, size * 0.98
     x0, x1 = x - pad, x - pad + w
-    return (f'<rect x="{x0}" y="{top:.1f}" width="{w:.1f}" height="{h:.1f}" fill="{MATCHA_SOFT}"/>'
+    return (f'<rect x="{x0}" y="{top:.1f}" width="{w:.1f}" height="{h:.1f}" fill="{PINK_SOFT}"/>'
             f'<rect x="{x0-3}" y="{top:.1f}" width="5" height="{h:.1f}" fill="{MAROON}"/>'
             f'<circle cx="{x0-0.5}" cy="{top:.1f}" r="9" fill="{MAROON}"/>'
             f'<rect x="{x1-2}" y="{top:.1f}" width="5" height="{h:.1f}" fill="{MAROON}"/>'
@@ -252,10 +253,10 @@ def selected_line(x, base, parts, size=96, pad=10):
 
 def highlight_demo():
     body = f'<rect width="{W}" height="760" fill="{PAPER}"/>'
-    body += f'<text x="80" y="90" font-family="{MONO}" font-size="26" fill="{OLIVE}">A. marker: lower band only, one band per line</text>'
+    body += f'<text x="80" y="90" font-family="{MONO}" font-size="26" fill="{ROSE}">A. marker: lower band only, one band per line</text>'
     body += marker_line(80, 220, [("kerja dari ", 0), ("kafe", 1)])
     body += marker_line(80, 330, [("bukan kabur", 0)])
-    body += f'<text x="80" y="470" font-family="{MONO}" font-size="26" fill="{OLIVE}">B. selected text: signature, one phrase per slide</text>'
+    body += f'<text x="80" y="470" font-family="{MONO}" font-size="26" fill="{ROSE}">B. selected text: signature, one phrase per slide</text>'
     body += f'<text x="80" y="620" font-family="{SERIF}" font-size="96" fill="{MAROON}">jadi</text>'
     body += selected_line(80 + REG.getlength("jadi ") + 22, 620, [("produktif", 0), ("-ish", 1)])
     return svg(W, 760, body)
