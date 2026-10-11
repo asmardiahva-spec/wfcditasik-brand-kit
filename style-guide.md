@@ -4,7 +4,7 @@ The look: **a café worker's scrapbook.** Real photos, paper, tape, phone-screen
 
 ## Colors
 
-Palette: **Blood Red, Ruddy Pink, Light Goldenrod Yellow** (cherry pie at a diner).
+Palette: **Blood Red, Ruddy Pink, Light Goldenrod Yellow, White** (cherry pie on a white diner plate).
 
 | Name | Hex | Use |
 |---|---|---|
@@ -14,12 +14,12 @@ Palette: **Blood Red, Ruddy Pink, Light Goldenrod Yellow** (cherry pie at a dine
 | Pink soft | `#F2C9CF` | Selected-text highlight, soft backgrounds |
 | Rose | `#A3404F` | Small labels, widgets, accents |
 | Light Goldenrod Yellow | `#FAF4D4` | Base background |
-| Paper | `#FFFBEA` | Cards, notes, polaroids |
+| White | `#FFFFFF` | Cards, notes, polaroids, sticker outlines, white backgrounds |
 | Ink | `#2B0A0C` | Cursor, rare dark details |
 
-Contrast with Blood Red text: on yellow 12.1:1, on paper 12.9:1, on pink soft 9.0:1, on Ruddy Pink 5.5:1 (all readable).
+Contrast with Blood Red text: on white 13.6:1, on yellow 12.1:1, on pink soft 9.0:1, on Ruddy Pink 5.5:1 (all readable).
 
-Rule: Blood Red text on yellow or paper. Never Blood Red text directly on a checker or stripes; put it on a paper scrap first. On a solid Blood Red slide, use yellow or pink soft text.
+Rule: Blood Red text on yellow or white. Never Blood Red text directly on a checker or stripes; put it on a paper scrap first. On a solid Blood Red slide, use white, yellow or pink soft text.
 
 ## Fonts (in `/fonts`, all free, OFL license)
 
@@ -49,7 +49,7 @@ Two styles only. See `highlights/png/highlight-styles.png`.
 ## Backgrounds (`/backgrounds`, 1080 × 1350)
 
 Rotate, never the same background twice in a row:
-grid paper · pink checker · red checker · pink stripes · red stripes · solid yellow · solid red (one big statement) · dashed card on red/pink (for quotes) · your own photo.
+grid paper (yellow or white) · solid white · pink/white checker (diner tablecloth) · pink/yellow checker · red checker · pink stripes · red stripes · solid yellow · solid red (one big statement) · dashed card on red/pink (for quotes) · your own photo.
 
 ## Stickers and paper
 

@@ -1,5 +1,5 @@
 """Generate WFCditasik brand kit SVGs + PNG exports.
-Palette: Blood Red #660005, Ruddy Pink #DF8F9C, Light Goldenrod Yellow #FAF4D4."""
+Palette: Blood Red #660005, Ruddy Pink #DF8F9C, Light Goldenrod Yellow #FAF4D4, White #FFFFFF."""
 import os, sys, cairosvg
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
@@ -9,7 +9,7 @@ PINK = "#DF8F9C"
 PINK_SOFT = "#F2C9CF"
 ROSE = "#A3404F"
 CREAM = "#FAF4D4"
-PAPER = "#FFFBEA"
+PAPER = "#FFFFFF"
 INK = "#2B0A0C"
 GRID = "#EADFB4"
 
@@ -50,12 +50,14 @@ def sticker(w, h, inner, pad=24):
 W, H = 1080, 1350
 
 
-def grid_paper():
+def grid_paper(base=None, grid=None):
+    base = base or CREAM
+    grid = grid or GRID
     step = 36
     lines = "".join(f'<line x1="{x}" y1="0" x2="{x}" y2="{H}"/>' for x in range(0, W + 1, step))
     lines += "".join(f'<line x1="0" y1="{y}" x2="{W}" y2="{y}"/>' for y in range(0, H + 1, step))
-    return svg(W, H, f'<rect width="{W}" height="{H}" fill="{PAPER}"/>'
-                     f'<g stroke="{GRID}" stroke-width="1.5">{lines}</g>')
+    return svg(W, H, f'<rect width="{W}" height="{H}" fill="{base}"/>'
+                     f'<g stroke="{grid}" stroke-width="1.5">{lines}</g>')
 
 
 def checker(c1, c2, size=90):
@@ -84,6 +86,9 @@ def dashed_frame(bg, card, dash):
 
 
 save("backgrounds/svg/grid-paper-cream.svg", grid_paper())
+save("backgrounds/svg/grid-paper-white.svg", grid_paper("#FFFFFF", "#F1DADD"))
+save("backgrounds/svg/solid-white.svg", solid("#FFFFFF"))
+save("backgrounds/svg/checker-pink-white.svg", checker("#FFFFFF", PINK))
 save("backgrounds/svg/checker-pink-cream.svg", checker(CREAM, PINK))
 save("backgrounds/svg/checker-red-cream.svg", checker(CREAM, MAROON))
 save("backgrounds/svg/stripes-pink.svg", stripes(CREAM, PINK))
