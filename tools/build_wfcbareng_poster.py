@@ -93,13 +93,13 @@ def poster(n, date, t, ill, qr):
     qr_html = (f'<img src="file://{os.path.abspath(qr)}" style="width:184px; height:184px; display:block; background:#fff; padding:10px; border-radius:14px;">' if qr else
                f'<div class="mono" style="width:184px; height:184px; background:#FFFFFF; border:4px dashed #DF8F9C; border-radius:14px; color:{RED}; display:flex; align-items:center; justify-content:center; text-align:center; font-size:20px; font-weight:700;">QR<br>CODE</div>')
     return f"""<div class="slide"><div class="grain"></div>
-  <div class="abs tt" style="left:0; width:1080px; top:78px; text-align:center; font-size:238px; line-height:.57; letter-spacing:-7px;">WFC<br><span style="margin-left:-40px;">bareng</span></div>
-  <div class="abs mono" style="left:0; width:1080px; top:476px; text-align:center; font-size:23px; font-weight:700; letter-spacing:2px; line-height:1.55;">CONNECTING TASIK REMOTE WORKERS,<br>FREELANCERS, CREATIVES, AND BUILDERS</div>
-  <div class="abs" style="left:858px; top:84px; transform:rotate(-7deg); background:{t['title']}; color:{t['bg']}; padding:2px 20px 8px; box-shadow:0 6px 0 rgba(0,0,0,.13);"><span class="serif" style="font-size:84px; line-height:1;"><i>#{n}</i></span></div>
-  {st('ui-accents/png/toggle-mode-fokus-green.png', 46, 52, 210, -7)}
-  <div class="card" style="left:90px; top:624px; width:900px; height:420px; border-radius:36px;"></div>
-  <img class="abs" src="file://{os.path.abspath(ill)}" style="left:280px; top:634px; width:520px; z-index:3;">
-  <div class="abs" style="left:66px; top:628px; transform:rotate(-8deg); z-index:4; background:#F6CB45; color:{RED}; padding:6px 22px 12px; border-radius:6px; box-shadow:0 6px 14px rgba(0,0,0,.15);">
+  <div class="abs tt" style="left:0; width:1080px; top:116px; text-align:center; font-size:238px; line-height:.57; letter-spacing:-7px;">WFC<br><span style="margin-left:-40px;">bareng</span></div>
+  <div class="abs mono" style="left:0; width:1080px; top:504px; text-align:center; font-size:23px; font-weight:700; letter-spacing:2px; line-height:1.55;">CONNECTING TASIK REMOTE WORKERS,<br>FREELANCERS, CREATIVES, AND BUILDERS</div>
+  <div class="abs" style="left:858px; top:122px; transform:rotate(-7deg); background:{t['title']}; color:{t['bg']}; padding:2px 20px 8px; box-shadow:0 6px 0 rgba(0,0,0,.13);"><span class="serif" style="font-size:84px; line-height:1;"><i>#{n}</i></span></div>
+  {st('ui-accents/png/toggle-mode-fokus-green.png', 46, 88, 210, -7)}
+  <div class="card" style="left:90px; top:632px; width:900px; height:410px; border-radius:36px;"></div>
+  <img class="abs" src="file://{os.path.abspath(ill)}" style="left:285px; top:642px; width:510px; z-index:3;">
+  <div class="abs" style="left:66px; top:636px; transform:rotate(-8deg); z-index:4; background:#F6CB45; color:{RED}; padding:6px 22px 12px; border-radius:6px; box-shadow:0 6px 14px rgba(0,0,0,.15);">
     <div class="serif" style="font-size:64px; line-height:1;"><i>Free</i></div>
     <div class="mono" style="font-size:16px; font-weight:700; margin-top:2px;">for member &amp;<br>non-member</div></div>
   <div class="abs" style="left:90px; top:1078px; width:300px;">
