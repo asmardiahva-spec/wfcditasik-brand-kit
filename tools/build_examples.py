@@ -12,7 +12,7 @@ CSS = f"""
 @font-face {{ font-family: 'CP'; src: url('{U}/fonts/CourierPrime-Regular.ttf'); }}
 @font-face {{ font-family: 'CP'; font-weight: 700; src: url('{U}/fonts/CourierPrime-Bold.ttf'); }}
 @font-face {{ font-family: 'CV'; src: url('{U}/fonts/Caveat[wght].ttf'); font-weight: 400 700; }}
-:root {{ --red:#660005; --pink:#DF8F9C; --pinksoft:#F2C9CF; --rose:#A3404F; --yellow:#FAF4D4; --white:#FFFFFF; --gold:#EFC94C; --goldsoft:#F7E6A6; }}
+:root {{ --red:#660005; --pink:#DF8F9C; --pinksoft:#F2C9CF; --rose:#A3404F; --white:#FFFFFF; }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 html, body {{ width:1080px; height:1350px; overflow:hidden; }}
 .slide {{ position:relative; width:1080px; height:1350px; background-size:cover; color:var(--red); }}
@@ -22,13 +22,13 @@ html, body {{ width:1080px; height:1350px; overflow:hidden; }}
 .hand {{ font-family:'CV', cursive; font-weight:500; line-height:1.1; }}
 .abs {{ position:absolute; }}
 /* marker: sits behind the lower part of the letters, one band per line */
-.mk {{ background:linear-gradient(to bottom, transparent 52%, var(--gold) 52%, var(--gold) 80%, transparent 80%);
+.mk {{ background:linear-gradient(to bottom, transparent 52%, var(--pink) 52%, var(--pink) 80%, transparent 80%);
        -webkit-box-decoration-break:clone; box-decoration-break:clone; padding:0 8px; margin:0 -8px; }}
-.mk.soft {{ background:linear-gradient(to bottom, transparent 52%, var(--goldsoft) 52%, var(--goldsoft) 80%, transparent 80%); }}
+.mk.soft {{ background:linear-gradient(to bottom, transparent 52%, var(--pinksoft) 52%, var(--pinksoft) 80%, transparent 80%); }}
 /* selected text with handles */
 .mk.pk {{ background:linear-gradient(to bottom, transparent 52%, var(--pink) 52%, var(--pink) 80%, transparent 80%); }}
 .sel.pk {{ background:var(--pinksoft); }}
-.sel {{ position:relative; background:var(--goldsoft); padding:0 10px; margin:0 6px; }}
+.sel {{ position:relative; background:var(--pinksoft); padding:0 10px; margin:0 6px; }}
 .sel .h {{ position:absolute; top:0; bottom:0; width:5px; background:var(--red); }}
 .sel .h::after {{ content:''; position:absolute; left:-6.5px; width:18px; height:18px; border-radius:50%; background:var(--red); }}
 .sel .l {{ left:-3px; }} .sel .l::after {{ top:-14px; }}
@@ -64,7 +64,7 @@ SLIDES["A-minuman-kerjaan"] = [
     # A1 cover: diner checker, white card, tape, notification sticker
     f"""<div class="slide" style="{bg('stripes-red')}">
       <div class="card" style="left:90px; top:250px; width:820px; height:660px; transform:rotate(-2deg);"></div>
-      {st('paper/png/tape-kraft.png', 380, 205, 300, -4, 3)}
+      {st('paper/png/tape-gray.png', 380, 205, 300, -4, 3)}
       <div class="abs" style="left:150px; top:330px; width:720px; transform:rotate(-2deg); z-index:2;">
         <div class="mono" style="font-size:26px; letter-spacing:3px; color:var(--red);">TES KEPRIBADIAN (NGGAK ILMIAH)</div>
         <div class="serif" style="font-size:128px; margin-top:26px;">Minuman kamu<br>= <span class="mk pk"><i>kerjaan</i></span><br>kamu</div>
@@ -73,8 +73,8 @@ SLIDES["A-minuman-kerjaan"] = [
       {st('ui-stickers/png/notification-pill.png', 390, 980, 580, 4, 4)}
       {foot(1, chip=True)}
     </div>""",
-    # A2 content: yellow, list with marker on drink names, reminders sticker
-    f"""<div class="slide" style="{bg('solid-cream')}">
+    # A2 content: gray, list with marker on drink names, reminders sticker
+    f"""<div class="slide" style="{bg('solid-gray')}">
       <div class="serif abs" style="left:90px; top:150px; font-size:92px; width:900px;">Kamu tim <i>yang mana?</i></div>
       {st('ui-stickers/png/reminders-card.png', 90, 1010, 190, -7, 2)}
       <div class="abs" style="left:90px; top:370px; width:900px;">
@@ -88,15 +88,15 @@ SLIDES["A-minuman-kerjaan"] = [
       <div class="hand abs" style="left:310px; top:1080px; font-size:48px; transform:rotate(-4deg); color:var(--red);">air putih = sudah tercerahkan</div>
       {foot(2)}
     </div>""",
-    # A3 CTA: solid red, white/yellow text, white scrap with tape
+    # A3 CTA: solid red, white/pink text, white scrap with tape
     f"""<div class="slide" style="{bg('solid-red')}">
-      <div class="serif abs" style="left:90px; top:230px; width:920px; font-size:104px; color:var(--white);">Komen minuman<br>kamu, <i style="color:var(--yellow);">kita tebak</i><br>kerjaanmu.</div>
+      <div class="serif abs" style="left:90px; top:230px; width:920px; font-size:104px; color:var(--white);">Komen minuman<br>kamu, <i style="color:var(--pinksoft);">kita tebak</i><br>kerjaanmu.</div>
       <div class="card" style="left:300px; top:790px; width:560px; height:230px; transform:rotate(3deg);"></div>
-      {st('paper/png/tape-kraft.png', 360, 760, 200, -8, 3)}
+      {st('paper/png/tape-gray.png', 360, 760, 200, -8, 3)}
       <div class="abs mono" style="left:340px; top:860px; width:500px; transform:rotate(3deg); font-size:40px; font-weight:700; z-index:2; text-align:center;">Follow @wfcditasik</div>
       <div class="abs hand" style="left:340px; top:925px; width:500px; transform:rotate(3deg); font-size:40px; color:var(--red); z-index:2; text-align:center;">biar ada temen kerja</div>
       {st('ui-stickers/png/cursor-arrow.png', 790, 940, 90, -10, 4)}
-      {foot(3, 'var(--yellow)')}
+      {foot(3, 'var(--pinksoft)')}
     </div>""",
 ]
 
@@ -111,7 +111,7 @@ SLIDES["B-wfc-beneran-kerja"] = [
       {foot(1)}
     </div>""",
     # B2 content: pink stripes, lined note with 3 rules
-    f"""<div class="slide" style="{bg('grid-paper-cream')}">
+    f"""<div class="slide" style="{bg('grid-paper-gray')}">
       {st('paper/png/note-lined.png', 70, 210, 940, 2, 1)}
       {st('paper/png/tape-red.png', 420, 180, 240, -3, 3)}
       <div class="abs" style="left:180px; top:300px; width:760px; transform:rotate(2deg); z-index:2;">
@@ -124,9 +124,9 @@ SLIDES["B-wfc-beneran-kerja"] = [
       <div class="hand abs" style="left:590px; top:965px; width:380px; font-size:48px; transform:rotate(-4deg); z-index:2;">kecil, tapi ngaruh</div>
       {foot(2, chip=True)}
     </div>""",
-    # B3 CTA: yellow, folder sticker, save prompt
-    f"""<div class="slide" style="{bg('solid-cream')}">
-      {st('ui-stickers/png/folder-gold.png', 600, 170, 370, 6, 2)}
+    # B3 CTA: gray, folder sticker, save prompt
+    f"""<div class="slide" style="{bg('solid-gray')}">
+      {st('ui-stickers/png/folder-pink.png', 600, 170, 370, 6, 2)}
       <div class="hand abs" style="left:620px; top:520px; font-size:44px; transform:rotate(6deg); color:var(--red);">folder: niat 2026</div>
       <div class="serif abs" style="left:90px; top:680px; width:900px; font-size:108px;">Simpan dulu,<br><span class="mk"><i>praktekkin</i></span> Kamis ini.</div>
       <div class="mono abs" style="left:90px; top:1020px; width:820px; font-size:30px;">Tag partner WFC kamu &amp; follow @wfcditasik<br>buat kerja bareng tiap Kamis.</div>
@@ -138,20 +138,20 @@ SLIDES["B-wfc-beneran-kerja"] = [
 SLIDES["C-sendiri-vs-bareng"] = [
     # C1 cover: solid red, white text, weather widget
     f"""<div class="slide" style="{bg('solid-red')}">
-      <div class="mono abs" style="left:90px; top:150px; font-size:26px; letter-spacing:3px; color:var(--yellow);">STUDI KASUS: KITA SEMUA</div>
-      <div class="serif abs" style="left:90px; top:250px; width:900px; font-size:140px; color:var(--white);">Kerja <i style="color:var(--yellow);">sendiri</i><br>vs kerja<br>bareng</div>
+      <div class="mono abs" style="left:90px; top:150px; font-size:26px; letter-spacing:3px; color:var(--pinksoft);">STUDI KASUS: KITA SEMUA</div>
+      <div class="serif abs" style="left:90px; top:250px; width:900px; font-size:140px; color:var(--white);">Kerja <i style="color:var(--pinksoft);">sendiri</i><br>vs kerja<br>bareng</div>
       {st('ui-stickers/png/widget-weather-tasik.png', 560, 880, 420, -5, 2)}
-      <div class="hand abs" style="left:96px; top:960px; font-size:52px; transform:rotate(-4deg); color:var(--yellow);">spoiler: yang kedua.</div>
-      {foot(1, 'var(--yellow)')}
+      <div class="hand abs" style="left:96px; top:960px; font-size:52px; transform:rotate(-4deg); color:var(--pinksoft);">spoiler: yang kedua.</div>
+      {foot(1, 'var(--pinksoft)')}
     </div>""",
     # C2 content: red checker, two white scraps
-    f"""<div class="slide" style="{bg('checker-red-cream')}">
+    f"""<div class="slide" style="{bg('checker-red-gray')}">
       <div class="card" style="left:90px; top:170px; width:640px; height:400px; transform:rotate(-3deg);"></div>
       <div class="abs" style="left:140px; top:200px; width:560px; transform:rotate(-3deg); z-index:2;">
         <div class="serif" style="font-size:74px;"><i>Sendiri</i></div>
         <div class="mono" style="font-size:30px; margin-top:20px;">Fokus 20 menit.<br>Buka TikTok 40 menit.<br>Ulangi sampai maghrib.</div>
       </div>
-      {st('paper/png/tape-kraft.png', 330, 120, 200, 4, 3)}
+      {st('paper/png/tape-gray.png', 330, 120, 200, 4, 3)}
       <div class="card" style="left:350px; top:690px; width:640px; height:400px; transform:rotate(2.5deg);"></div>
       <div class="abs" style="left:400px; top:750px; width:560px; transform:rotate(2.5deg); z-index:2;">
         <div class="serif" style="font-size:74px;"><span class="mk"><i>Bareng</i></span></div>
@@ -166,9 +166,9 @@ SLIDES["C-sendiri-vs-bareng"] = [
       <div class="mono abs" style="left:90px; top:520px; width:620px; font-size:32px;">Bawa laptop, bawa kerjaan.<br>Teman kerjanya dari kami.</div>
       <div class="abs" style="left:90px; top:760px; width:900px; height:420px; background:var(--red);"></div>
       {st('ui-stickers/png/notification-pill.png', 380, 700, 580, -4, 2)}
-      {st('paper/png/tape-red.png', 120, 735, 220, -6, 3)}
+      {st('paper/png/tape-gray.png', 120, 735, 220, -6, 3)}
       <div class="mono abs" style="left:150px; top:950px; font-size:44px; font-weight:700; color:var(--white);">Follow @wfcditasik</div>
-      <div class="hand abs" style="left:156px; top:1020px; font-size:48px; transform:rotate(-2deg); color:var(--yellow);">biar nggak ketinggalan info</div>
+      <div class="hand abs" style="left:156px; top:1020px; font-size:48px; transform:rotate(-2deg); color:var(--pinksoft);">biar nggak ketinggalan info</div>
       {foot(3)}
     </div>""",
 ]

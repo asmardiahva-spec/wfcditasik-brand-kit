@@ -4,30 +4,28 @@ The look: **a café worker's scrapbook.** Real photos, paper, tape, phone-screen
 
 ## Colors
 
-Palette: **Blood Red, Light Goldenrod Yellow, White**, with **Golden** for highlights and **Ruddy Pink** as a small accent only. Cute, but not too feminine.
+Palette: **Blood Red + cool light gray + White**, with **Ruddy Pink** as the highlight and small accent. No yellow. Cute, but not too feminine.
 
 | Name | Hex | Use |
 |---|---|---|
-| Blood Red | `#660005` | Main text, handles, full-color statement slides |
-| Light Goldenrod Yellow | `#FAF4D4` | Base background |
+| Blood Red | `#660005` | Main text, handles, full-color statement slides, checker, stripes |
+| Cool light gray | `#EDEDED` | Base background |
+| Grid gray | `#D9D9D9` | Grid paper lines |
 | White | `#FFFFFF` | Cards, notes, polaroids, sticker outlines, white backgrounds |
-| Golden | `#EFC94C` | Marker highlight on yellow pages, gold stripes, folder, tape |
-| Gold soft | `#F7E6A6` | Selected-text highlight on yellow pages |
-| Ruddy Pink | `#DF8F9C` | Small accent only: marker on white/red pages, tape, tiny details |
-| Pink soft | `#F2C9CF` | Selected-text highlight on white pages |
+| Ruddy Pink | `#DF8F9C` | Marker highlight, small accents (tape, folder, tiny details) |
+| Pink soft | `#F2C9CF` | Selected-text highlight; accent text on solid red slides |
 | Rose | `#A3404F` | Small widget details |
 | Ink | `#2B0A0C` | Cursor, rare dark details |
 
-Contrast with Blood Red text: on white 13.6:1, on yellow 12.1:1, on pink soft 9.0:1, on Ruddy Pink 5.5:1, on Golden 7+:1 (all readable).
+Contrast with Blood Red text: on white 13.6:1, on gray 11.9:1, on pink soft 9.0:1, on Ruddy Pink 5.5:1 (all readable).
 
 ### Pink rules (not too feminine)
-1. **Pink is never a background.** No pink checker, pink stripes, pink cards or big pink blocks.
-2. **Pink and yellow are never both dominant on one page.** If a page has both, one of them is only a tiny accent.
-3. **Yellow pages:** highlights are golden, never pink. Pink can only appear as a tiny detail.
-4. **White or red pages:** the pink marker or pink-soft selected text is allowed (that is the "cute" touch).
-5. Handwritten notes are Blood Red (or white/yellow on red slides), never pink.
+1. **Blood Red leads.** Gray and white are the base. Pink is only for highlights and small details.
+2. **Pink is never a background.** No pink checker, pink stripes, pink cards or big pink blocks.
+3. **No yellow, no green** anywhere.
+4. Handwritten notes are Blood Red (white or pink soft on red slides).
 
-Text rule: Blood Red text on yellow or white. Never Blood Red text directly on a checker or stripes; put it on a white paper scrap first. On a solid Blood Red slide, use white or yellow text.
+Text rule: Blood Red text on gray or white. Never Blood Red text directly on a checker or stripes; put it on a white paper scrap first. On a solid Blood Red slide, use white text with pink-soft accents.
 
 ## Fonts (in `/fonts`, all free, OFL license)
 
@@ -37,17 +35,17 @@ Text rule: Blood Red text on yellow or white. Never Blood Red text directly on a
 
 ## Highlights (the readability rules)
 
-Two styles only. See `highlights/png/highlight-styles.png`. The color depends on the page (see Pink rules).
+Two styles only. See `highlights/png/highlight-styles.png`.
 
 **A. Marker (default)**
-- Golden band on yellow pages, Ruddy Pink band on white or red pages. Always behind the text, never on top of it.
+- Ruddy Pink band, always behind the text, never on top of it.
 - Band covers only the lower part of the letters: top at about 30% of font size above the baseline, height about 36% of font size.
 - One band per line. If a phrase wraps, each line gets its own band, the width of that line only.
 - Side padding 6 to 10 px. The band never extends past the last letter.
 - Line spacing at least 1.15 so bands never touch the line above or below.
 
 **B. Selected text (signature, max once per carousel)**
-- Pink-soft block on white pages, gold-soft on yellow pages, from cap height to just under the descenders.
+- Pink-soft block from cap height to just under the descenders.
 - Blood Red handles: left handle dot on top, right handle dot on the bottom (`ui-stickers/selection-handle-*`).
 - Only for one short phrase (1 to 3 words) on a single line. Never on wrapped text.
 - Leave a clear gap between the left handle and the word before it.
@@ -57,12 +55,12 @@ Two styles only. See `highlights/png/highlight-styles.png`. The color depends on
 ## Backgrounds (`/backgrounds`, 1080 × 1350)
 
 Rotate, never the same background twice in a row:
-grid paper (yellow or white) · solid white · solid yellow · solid red (one big statement) · red/yellow checker · red/white checker · red stripes · gold stripes · dashed card on red or yellow (for quotes) · your own photo. No pink backgrounds.
+grid paper (gray or white) · solid gray · solid white · solid red (one big statement) · red/gray checker · red/white checker · red stripes · dashed card on red or gray (for quotes) · your own photo. No pink or yellow backgrounds.
 
 ## Stickers and paper
 
-- `ui-stickers/`: copy bar, selection handles, notification pill, gold folder, Tasik weather widget, reminders card, wifi pill, cursor, polaroid frame.
-- `paper/`: washi tape (kraft, red, gold, pink for tiny accents), lined note, torn strip.
+- `ui-stickers/`: copy bar, selection handles, notification pill, pink folder (accent), Tasik weather widget, reminders card, wifi pill, cursor, polaroid frame.
+- `paper/`: washi tape (gray, red, pink for tiny accents), lined note, torn strip.
 - `photo-stickers/`: your own cut-out photos from WFC sessions (kopi, laptop, notebook, charger). This is what makes the feed feel local.
 - Max 3 to 4 stickers per slide. Overlap edges a little, tilt between -8° and 8°.
 
@@ -77,7 +75,7 @@ grid paper (yellow or white) · solid white · solid yellow · solid red (one bi
 
 ## Reference examples
 
-See `examples/*-preview.png`. These show the right balance: Blood Red + yellow lead, golden markers on yellow pages, pink only as a highlight on white pages ("Beneran", "kerjaan", "tiap Kamis").
+See `examples/*-preview.png`. These show the right balance: Blood Red leads, gray and white base, pink only as highlights and small accents ("Beneran", "kerjaan", "tiap Kamis").
 
 ## Tone
 

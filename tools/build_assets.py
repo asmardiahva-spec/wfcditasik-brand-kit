@@ -1,5 +1,5 @@
 """Generate WFCditasik brand kit SVGs + PNG exports.
-Palette: Blood Red #660005, Ruddy Pink #DF8F9C, Light Goldenrod Yellow #FAF4D4, White #FFFFFF."""
+Palette: Blood Red #660005, cool light gray #EDEDED, White #FFFFFF, Ruddy Pink #DF8F9C (accent only)."""
 import os, sys, cairosvg
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
@@ -7,14 +7,11 @@ MAROON = "#660005"
 MAROON_DK = "#3F0003"
 PINK = "#DF8F9C"
 PINK_SOFT = "#F2C9CF"
-GOLD = "#EFC94C"
-GOLD_SOFT = "#F7E6A6"
-GOLD_DK = "#C9A23A"
 ROSE = "#A3404F"
-CREAM = "#FAF4D4"
+GRAY = "#EDEDED"
 PAPER = "#FFFFFF"
 INK = "#2B0A0C"
-GRID = "#EADFB4"
+GRID = "#D9D9D9"
 
 SANS = "Helvetica, Arial, sans-serif"
 SERIF = "'Instrument Serif', Georgia, serif"
@@ -54,7 +51,7 @@ W, H = 1080, 1350
 
 
 def grid_paper(base=None, grid=None):
-    base = base or CREAM
+    base = base or GRAY
     grid = grid or GRID
     step = 36
     lines = "".join(f'<line x1="{x}" y1="0" x2="{x}" y2="{H}"/>' for x in range(0, W + 1, step))
@@ -88,18 +85,17 @@ def dashed_frame(bg, card, dash):
                      f'stroke="{dash}" stroke-width="4" stroke-dasharray="16 12"/>')
 
 
-save("backgrounds/svg/grid-paper-cream.svg", grid_paper())
-save("backgrounds/svg/grid-paper-white.svg", grid_paper("#FFFFFF", "#ECE4DA"))
+save("backgrounds/svg/grid-paper-gray.svg", grid_paper())
+save("backgrounds/svg/grid-paper-white.svg", grid_paper("#FFFFFF", "#E6E6E6"))
 save("backgrounds/svg/solid-white.svg", solid("#FFFFFF"))
 save("backgrounds/svg/checker-red-white.svg", checker("#FFFFFF", MAROON))
-save("backgrounds/svg/checker-red-cream.svg", checker(CREAM, MAROON))
-save("backgrounds/svg/stripes-gold.svg", stripes(CREAM, GOLD))
-save("backgrounds/svg/stripes-red.svg", stripes(CREAM, MAROON, 26))
+save("backgrounds/svg/checker-red-gray.svg", checker(GRAY, MAROON))
+save("backgrounds/svg/stripes-red.svg", stripes(GRAY, MAROON, 26))
 save("backgrounds/svg/solid-red.svg", solid(MAROON))
-save("backgrounds/svg/solid-cream.svg", solid(CREAM))
-save("backgrounds/svg/dashed-card-on-yellow.svg",
-     dashed_frame(CREAM, PAPER, MAROON))
-save("backgrounds/svg/dashed-card-on-red.svg", dashed_frame(MAROON, CREAM, GOLD_DK))
+save("backgrounds/svg/solid-gray.svg", solid(GRAY))
+save("backgrounds/svg/dashed-card-on-gray.svg",
+     dashed_frame(GRAY, PAPER, MAROON))
+save("backgrounds/svg/dashed-card-on-red.svg", dashed_frame(MAROON, GRAY, PINK))
 
 # ---------------- UI STICKERS ----------------
 
@@ -118,13 +114,13 @@ save("ui-stickers/svg/selection-handle-right.svg", handle(True), 4)
 # 2. Copy / Select All / Share bar
 bar_w, bar_h = 420, 64
 outline = f'<rect width="{bar_w}" height="{bar_h}" rx="14"/>'
-art = (f'<rect width="{bar_w}" height="{bar_h}" rx="14" fill="#EFE9DF"/>'
-       f'<line x1="118" y1="14" x2="118" y2="50" stroke="#CFC6B6" stroke-width="2"/>'
-       f'<line x1="282" y1="14" x2="282" y2="50" stroke="#CFC6B6" stroke-width="2"/>'
+art = (f'<rect width="{bar_w}" height="{bar_h}" rx="14" fill="#EEEEEE"/>'
+       f'<line x1="118" y1="14" x2="118" y2="50" stroke="#CCCCCC" stroke-width="2"/>'
+       f'<line x1="282" y1="14" x2="282" y2="50" stroke="#CCCCCC" stroke-width="2"/>'
        f'<g font-family="{SANS}" font-size="24" fill="{INK}" text-anchor="middle">'
        f'<text x="59" y="41">Copy</text><text x="200" y="41">Select All</text>'
        f'<text x="351" y="41">Share…</text></g>'
-       f'<path d="M190 {bar_h} l12 14 l12 -14z" fill="#EFE9DF"/>')
+       f'<path d="M190 {bar_h} l12 14 l12 -14z" fill="#EEEEEE"/>')
 save("ui-stickers/svg/copy-select-bar.svg", sticker(bar_w, bar_h + 14, {"outline": outline, "art": art}))
 
 # 3. Notification pill
@@ -132,9 +128,9 @@ pw, ph = 560, 120
 outline = f'<rect width="{pw}" height="{ph}" rx="28"/>'
 art = (f'<rect width="{pw}" height="{ph}" rx="28" fill="{PAPER}"/>'
        f'<rect x="20" y="22" width="76" height="76" rx="18" fill="{MAROON}"/>'
-       f'<text x="58" y="74" font-family="{SERIF}" font-size="40" fill="{CREAM}" text-anchor="middle">wfc</text>'
+       f'<text x="58" y="74" font-family="{SERIF}" font-size="40" fill="{GRAY}" text-anchor="middle">wfc</text>'
        f'<text x="116" y="48" font-family="{SANS}" font-size="20" font-weight="bold" fill="{INK}">WFC di Tasik</text>'
-       f'<text x="{pw-24}" y="48" font-family="{SANS}" font-size="18" fill="#9A8F80" text-anchor="end">now</text>'
+       f'<text x="{pw-24}" y="48" font-family="{SANS}" font-size="18" fill="#999999" text-anchor="end">now</text>'
        f'<text x="116" y="82" font-family="{SANS}" font-size="22" fill="{INK}">Kopi sudah siap. Laptop kamu?</text>')
 save("ui-stickers/svg/notification-pill.svg", sticker(pw, ph, {"outline": outline, "art": art}))
 
@@ -142,20 +138,20 @@ save("ui-stickers/svg/notification-pill.svg", sticker(pw, ph, {"outline": outlin
 fw, fh = 240, 180
 folder_path = f"M0 30 Q0 14 16 14 H86 Q96 14 102 24 L110 36 H{fw-16} Q{fw} 36 {fw} 52 V{fh-16} Q{fw} {fh} {fw-16} {fh} H16 Q0 {fh} 0 {fh-16}Z"
 outline = f'<path d="{folder_path}"/>'
-art = (f'<path d="{folder_path}" fill="{GOLD_DK}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{GOLD}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="10" fill="{GOLD_SOFT}" opacity="0.7"/>')
-save("ui-stickers/svg/folder-gold.svg", sticker(fw, fh, {"outline": outline, "art": art}))
+art = (f'<path d="{folder_path}" fill="{ROSE}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{PINK}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="10" fill="{PINK_SOFT}" opacity="0.6"/>')
+save("ui-stickers/svg/folder-pink.svg", sticker(fw, fh, {"outline": outline, "art": art}))
 
 # 5. Weather-style widget, Tasik version
 ww, wh = 360, 190
 outline = f'<rect width="{ww}" height="{wh}" rx="26"/>'
 art = (f'<rect width="{ww}" height="{wh}" rx="26" fill="{ROSE}"/>'
-       f'<text x="24" y="40" font-family="{SANS}" font-size="20" fill="{CREAM}">Tasikmalaya</text>'
-       f'<text x="20" y="118" font-family="{SANS}" font-size="74" fill="{CREAM}">27°</text>'
-       f'<text x="{ww-24}" y="40" font-family="{SANS}" font-size="20" fill="{CREAM}" text-anchor="end">Hujan sore</text>'
+       f'<text x="24" y="40" font-family="{SANS}" font-size="20" fill="{GRAY}">Tasikmalaya</text>'
+       f'<text x="20" y="118" font-family="{SANS}" font-size="74" fill="{GRAY}">27°</text>'
+       f'<text x="{ww-24}" y="40" font-family="{SANS}" font-size="20" fill="{GRAY}" text-anchor="end">Hujan sore</text>'
        f'<text x="{ww-24}" y="68" font-family="{SANS}" font-size="18" fill="{PINK_SOFT}" text-anchor="end">cocok buat WFC</text>'
-       + "".join(f'<circle cx="{40+i*56}" cy="160" r="9" fill="{PINK_SOFT if i<3 else CREAM}"/>' for i in range(6)))
+       + "".join(f'<circle cx="{40+i*56}" cy="160" r="9" fill="{PINK_SOFT if i<3 else GRAY}"/>' for i in range(6)))
 save("ui-stickers/svg/widget-weather-tasik.svg", sticker(ww, wh, {"outline": outline, "art": art}))
 
 # 6. Reminders / to-do card
@@ -165,20 +161,20 @@ dots = [MAROON, ROSE, PINK]
 art = f'<rect width="{rw}" height="{rh}" rx="48" fill="{PAPER}"/>' + "".join(
     f'<circle cx="54" cy="{58+i*52}" r="14" fill="none" stroke="{c}" stroke-width="5"/>'
     f'<circle cx="54" cy="{58+i*52}" r="7" fill="{c}"/>'
-    f'<rect x="84" y="{54+i*52}" width="96" height="8" rx="4" fill="#DDD4C4"/>' for i, c in enumerate(dots))
+    f'<rect x="84" y="{54+i*52}" width="96" height="8" rx="4" fill="#DCDCDC"/>' for i, c in enumerate(dots))
 save("ui-stickers/svg/reminders-card.svg", sticker(rw, rh, {"outline": outline, "art": art}))
 
 # 7. Wi-Fi + battery status pill
 sw, sh = 320, 76
 outline = f'<rect width="{sw}" height="{sh}" rx="38"/>'
-wifi = (f'<g transform="translate(36,20)" fill="none" stroke="{CREAM}" stroke-width="5" stroke-linecap="round">'
+wifi = (f'<g transform="translate(36,20)" fill="none" stroke="{GRAY}" stroke-width="5" stroke-linecap="round">'
         f'<path d="M0 14 Q22 -6 44 14"/><path d="M8 24 Q22 12 36 24"/></g>'
-        f'<circle cx="58" cy="54" r="5" fill="{CREAM}"/>')
+        f'<circle cx="58" cy="54" r="5" fill="{GRAY}"/>')
 art = (f'<rect width="{sw}" height="{sh}" rx="38" fill="{MAROON}"/>' + wifi +
-       f'<text x="104" y="48" font-family="{SANS}" font-size="22" fill="{CREAM}">wifi kencang</text>'
-       f'<rect x="246" y="26" width="44" height="24" rx="6" fill="none" stroke="{CREAM}" stroke-width="3"/>'
+       f'<text x="104" y="48" font-family="{SANS}" font-size="22" fill="{GRAY}">wifi kencang</text>'
+       f'<rect x="246" y="26" width="44" height="24" rx="6" fill="none" stroke="{GRAY}" stroke-width="3"/>'
        f'<rect x="250" y="30" width="30" height="16" rx="3" fill="{PINK}"/>'
-       f'<rect x="292" y="33" width="4" height="10" rx="2" fill="{CREAM}"/>')
+       f'<rect x="292" y="33" width="4" height="10" rx="2" fill="{GRAY}"/>')
 save("ui-stickers/svg/status-wifi-battery.svg", sticker(sw, sh, {"outline": outline, "art": art}))
 
 # 8. Cursor arrow
@@ -191,7 +187,7 @@ save("ui-stickers/svg/cursor-arrow.svg", sticker(42, 66, {"outline": outline, "a
 qw, qh = 320, 380
 outline = f'<rect width="{qw}" height="{qh}"/>'
 art = (f'<rect width="{qw}" height="{qh}" fill="{PAPER}"/>'
-       f'<rect x="20" y="20" width="{qw-40}" height="{qw-40}" fill="#D9D2C5"/>'
+       f'<rect x="20" y="20" width="{qw-40}" height="{qw-40}" fill="#D6D6D6"/>'
        f'<text x="{qw/2}" y="{qh-24}" font-family="{HAND}" font-size="34" fill="{MAROON}" text-anchor="middle">tempel foto di sini</text>')
 save("ui-stickers/svg/polaroid-frame.svg", sticker(qw, qh, {"outline": outline, "art": art}))
 
@@ -204,13 +200,12 @@ def tape(color, name):
 
 
 tape(PINK, "pink")
-tape(GOLD, "gold")
+tape("#CFCFCF", "gray")
 tape(MAROON, "red")
-tape("#E8DCC6", "kraft")
 
 # 11. Note paper scrap (lined) and torn-edge strip
 nw, nh = 460, 300
-lines = "".join(f'<line x1="24" y1="{70+i*40}" x2="{nw-24}" y2="{70+i*40}" stroke="#E4D9C8" stroke-width="2"/>' for i in range(6))
+lines = "".join(f'<line x1="24" y1="{70+i*40}" x2="{nw-24}" y2="{70+i*40}" stroke="#DEDEDE" stroke-width="2"/>' for i in range(6))
 save("paper/svg/note-lined.svg", svg(nw + 20, nh + 20,
      f'<g filter="url(#sh)"><rect x="10" y="6" width="{nw}" height="{nh}" fill="{PAPER}"/>{lines}'
      f'<line x1="70" y1="6" x2="70" y2="{nh+6}" stroke="{MAROON}" stroke-opacity="0.35" stroke-width="2"/></g>', SHADOW))
@@ -219,8 +214,8 @@ import random
 random.seed(7)
 tw = 900
 pts = " ".join(f"L{x} {random.randint(0, 14)}" for x in range(0, tw + 1, 18))
-save("paper/svg/torn-strip-cream.svg", svg(tw, 180,
-     f'<g filter="url(#sh)"><path d="M0 8 {pts} L{tw} 140 L0 140Z" fill="{CREAM}"/></g>', SHADOW))
+save("paper/svg/torn-strip-gray.svg", svg(tw, 180,
+     f'<g filter="url(#sh)"><path d="M0 8 {pts} L{tw} 140 L0 140Z" fill="{GRAY}"/></g>', SHADOW))
 
 # ---------------- HIGHLIGHT STYLES (reference renders) ----------------
 from PIL import ImageFont
@@ -239,7 +234,7 @@ def tspans(parts):
 
 
 def marker_line(x, base, parts, size=96, pad=8, color=None):
-    color = color or GOLD
+    color = color or PINK
     """Marker band: from ~x-height middle to just under baseline. Never reaches other lines."""
     w = tw(parts)
     top, h = base - size * 0.30, size * 0.36
@@ -262,16 +257,16 @@ def selected_line(x, base, parts, size=96, pad=10):
 
 def highlight_demo():
     H2 = 1120
-    body = f'<rect width="{W}" height="400" fill="{CREAM}"/><rect y="400" width="{W}" height="{H2-400}" fill="{PAPER}"/>'
-    body += f'<text x="80" y="80" font-family="{MONO}" font-size="24" fill="{MAROON}">A. YELLOW pages: golden marker (never pink)</text>'
+    body = f'<rect width="{W}" height="400" fill="{GRAY}"/><rect y="400" width="{W}" height="{H2-400}" fill="{PAPER}"/>'
+    body += f'<text x="80" y="80" font-family="{MONO}" font-size="24" fill="{MAROON}">A. GRAY pages: pink marker behind the text</text>'
     body += marker_line(80, 210, [("kerja dari ", 0), ("kafe", 1)])
     body += marker_line(80, 320, [("bukan kabur", 0)])
-    body += f'<text x="80" y="480" font-family="{MONO}" font-size="24" fill="{MAROON}">B. WHITE or RED pages: pink marker allowed</text>'
-    body += marker_line(80, 610, [("tiap ", 0), ("Kamis", 1)], color=PINK)
+    body += f'<text x="80" y="480" font-family="{MONO}" font-size="24" fill="{MAROON}">B. WHITE pages: same pink marker</text>'
+    body += marker_line(80, 610, [("tiap ", 0), ("Kamis", 1)])
     body += f'<text x="80" y="760" font-family="{MONO}" font-size="24" fill="{MAROON}">C. selected text: max once per carousel</text>'
     body += f'<text x="80" y="910" font-family="{SERIF}" font-size="96" fill="{MAROON}">jadi</text>'
     body += selected_line(80 + REG.getlength("jadi ") + 22, 910, [("produktif", 0), ("-ish", 1)])
-    body += f'<text x="80" y="1060" font-family="{MONO}" font-size="22" fill="{MAROON}">pink-soft on white pages, gold-soft on yellow pages</text>'
+    body += f'<text x="80" y="1060" font-family="{MONO}" font-size="22" fill="{MAROON}">pink-soft block + Blood Red handles, one short phrase</text>'
     return svg(W, H2, body)
 
 
