@@ -217,6 +217,112 @@ pts = " ".join(f"L{x} {random.randint(0, 14)}" for x in range(0, tw + 1, 18))
 save("paper/svg/torn-strip-gray.svg", svg(tw, 180,
      f'<g filter="url(#sh)"><path d="M0 8 {pts} L{tw} 140 L0 140Z" fill="{GRAY}"/></g>', SHADOW))
 
+# ---------------- POP ACCENT UI (tiny elements only) ----------------
+LEAF = "#8FCB63"
+DENIM = "#4D83C5"
+BRAVE = "#E0393E"
+BLOSSOM = "#F4B6C2"
+SUNNY = "#F6CB45"
+
+
+def pill_button(label, color, text="#FFFFFF", w=None):
+    w = w or (60 + len(label) * 17)
+    h = 64
+    outline = f'<rect width="{w}" height="{h}" rx="32"/>'
+    art = (f'<rect width="{w}" height="{h}" rx="32" fill="{color}"/>'
+           f'<text x="{w/2}" y="42" font-family="{SANS}" font-size="26" font-weight="bold" fill="{text}" text-anchor="middle">{label}</text>')
+    return sticker(w, h, {"outline": outline, "art": art}, pad=18)
+
+
+save("ui-accents/svg/button-follow-red.svg", pill_button("Follow", BRAVE))
+save("ui-accents/svg/button-join-green.svg", pill_button("Ikut WFC", LEAF, INK))
+save("ui-accents/svg/button-save-blue.svg", pill_button("Simpan", DENIM))
+save("ui-accents/svg/button-yes-yellow.svg", pill_button("Gas!", SUNNY, INK))
+
+
+def progress(label, pct, color, w=420):
+    h = 110
+    bw = w - 48
+    outline = f'<rect width="{w}" height="{h}" rx="18"/>'
+    art = (f'<rect width="{w}" height="{h}" rx="18" fill="{PAPER}"/>'
+           f'<text x="24" y="42" font-family="{SANS}" font-size="22" fill="{INK}">{label}</text>'
+           f'<text x="{w-24}" y="42" font-family="{SANS}" font-size="22" fill="#888888" text-anchor="end">{pct}%</text>'
+           f'<rect x="24" y="62" width="{bw}" height="18" rx="9" fill="#E3E3E3"/>'
+           f'<rect x="24" y="62" width="{bw*pct/100:.0f}" height="18" rx="9" fill="{color}"/>')
+    return sticker(w, h, {"outline": outline, "art": art}, pad=18)
+
+
+save("ui-accents/svg/progress-produktif-green.svg", progress("Produktivitas", 70, LEAF))
+save("ui-accents/svg/progress-semangat-yellow.svg", progress("Loading semangat...", 45, SUNNY))
+save("ui-accents/svg/progress-deadline-red.svg", progress("Deadline", 90, BRAVE))
+
+
+def toggle(label, color, on=True, w=360):
+    h = 84
+    kx = w - 56 if on else w - 108
+    outline = f'<rect width="{w}" height="{h}" rx="20"/>'
+    art = (f'<rect width="{w}" height="{h}" rx="20" fill="{PAPER}"/>'
+           f'<text x="24" y="52" font-family="{SANS}" font-size="24" fill="{INK}">{label}</text>'
+           f'<rect x="{w-128}" y="22" width="92" height="40" rx="20" fill="{color if on else "#D6D6D6"}"/>'
+           f'<circle cx="{kx}" cy="42" r="16" fill="#FFFFFF"/>')
+    return sticker(w, h, {"outline": outline, "art": art}, pad=18)
+
+
+save("ui-accents/svg/toggle-mode-fokus-green.svg", toggle("Mode fokus", LEAF))
+save("ui-accents/svg/toggle-notif-off.svg", toggle("Notif HP", LEAF, on=False))
+
+
+def checklist(items, color, w=420):
+    h = 40 + 56 * len(items)
+    outline = f'<rect width="{w}" height="{h}" rx="18"/>'
+    art = f'<rect width="{w}" height="{h}" rx="18" fill="{PAPER}"/>'
+    for i, (t, done) in enumerate(items):
+        y = 28 + i * 56
+        if done:
+            art += (f'<rect x="24" y="{y}" width="30" height="30" rx="7" fill="{color}"/>'
+                    f'<path d="M31 {y+15} l6 7 l11 -13" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
+                    f'<text x="72" y="{y+23}" font-family="{SANS}" font-size="24" fill="#999999" text-decoration="line-through">{t}</text>'
+                    )
+        else:
+            art += (f'<rect x="25" y="{y+1}" width="28" height="28" rx="7" fill="none" stroke="#BBBBBB" stroke-width="3"/>'
+                    f'<text x="72" y="{y+23}" font-family="{SANS}" font-size="24" fill="{INK}">{t}</text>')
+    return sticker(w, h, {"outline": outline, "art": art}, pad=18)
+
+
+save("ui-accents/svg/checklist-wfc-blue.svg", checklist([("Pesan kopi", 1), ("Cari colokan", 1), ("Kerja beneran", 0)], DENIM))
+
+
+def chip(label, bg, fg):
+    w = 36 + len(label) * 14
+    h = 44
+    outline = f'<rect width="{w}" height="{h}" rx="8"/>'
+    art = (f'<rect width="{w}" height="{h}" rx="8" fill="{bg}"/>'
+           f'<text x="{w/2}" y="30" font-family="{SANS}" font-size="22" fill="{fg}" text-anchor="middle">{label}</text>')
+    return sticker(w, h, {"outline": outline, "art": art}, pad=14)
+
+
+for label, bg, fg, name in [("WFC", "#DCE8F6", DENIM, "wfc-blue"), ("Deadline", "#FBDCDC", BRAVE, "deadline-red"),
+                            ("Santai", "#E4F3D8", "#4E8A2A", "santai-green"), ("Kopi", "#FDF1C9", "#9A7410", "kopi-yellow"),
+                            ("Fokus", "#FBE6EA", "#B8546A", "fokus-blossom")]:
+    save(f"ui-accents/svg/tag-{name}.svg", chip(label, bg, fg))
+
+
+# pointing-hand cursor
+hand = ("M18 4 Q18 0 22 0 Q26 0 26 4 V30 Q28 27 31 27 Q35 27 35 31 V33 Q37 30 40 30 Q44 30 44 34 V36 "
+        "Q46 33 49 33 Q53 33 53 37 V54 Q53 70 40 70 H28 Q20 70 15 62 L4 44 Q2 40 5 38 Q8 36 11 39 L18 47Z")
+save("ui-accents/svg/cursor-hand.svg", sticker(56, 72, {"outline": f'<path d="{hand}"/>',
+     "art": f'<path d="{hand}" fill="#FFFFFF" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'}, pad=14), 4)
+
+# notification badge
+save("ui-accents/svg/badge-red-3.svg", sticker(56, 56, {"outline": '<circle cx="28" cy="28" r="28"/>',
+     "art": f'<circle cx="28" cy="28" r="28" fill="{BRAVE}"/><text x="28" y="38" font-family="{SANS}" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>'}, pad=12), 3)
+
+# blue arrow cursor (tiny accent)
+cur2 = "M0 0 L0 56 L14 43 L24 66 L34 61 L24 39 L42 39Z"
+save("ui-accents/svg/cursor-arrow-blue.svg", sticker(42, 66, {"outline": f'<path d="{cur2}"/>',
+     "art": f'<path d="{cur2}" fill="{DENIM}" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>'}, pad=16), 4)
+
+
 # ---------------- HIGHLIGHT STYLES (reference renders) ----------------
 from PIL import ImageFont
 F = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "fonts", "")

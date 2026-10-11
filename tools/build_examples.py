@@ -95,7 +95,7 @@ SLIDES["A-minuman-kerjaan"] = [
       {st('paper/png/tape-gray.png', 360, 760, 200, -8, 3)}
       <div class="abs mono" style="left:340px; top:860px; width:500px; transform:rotate(3deg); font-size:40px; font-weight:700; z-index:2; text-align:center;">Follow @wfcditasik</div>
       <div class="abs hand" style="left:340px; top:925px; width:500px; transform:rotate(3deg); font-size:40px; color:var(--red); z-index:2; text-align:center;">biar ada temen kerja</div>
-      {st('ui-stickers/png/cursor-arrow.png', 790, 940, 90, -10, 4)}
+      {st('ui-accents/png/cursor-arrow-blue.png', 790, 940, 90, -10, 4)}
       {foot(3, 'var(--pinksoft)')}
     </div>""",
 ]
@@ -107,7 +107,7 @@ SLIDES["B-wfc-beneran-kerja"] = [
       {st('ui-stickers/png/copy-select-bar.png', 60, 300, 420, 0, 3)}
       <div class="serif abs" style="left:96px; top:420px; width:920px; font-size:150px;"><span class="sel pk"><span class="h l"></span><i>Beneran</i><span class="h r"></span></span> kerja,<br>bukan cuma WFC.</div>
       <div class="hand abs" style="left:96px; top:850px; font-size:56px; transform:rotate(-3deg); color:var(--red);">(alias pindah tempat scroll)</div>
-      {st('ui-stickers/png/status-wifi-battery.png', 640, 1020, 340, 5, 2)}
+      {st('ui-accents/png/toggle-mode-fokus-green.png', 560, 1010, 400, 4, 2)}
       {foot(1)}
     </div>""",
     # B2 content: pink stripes, lined note with 3 rules
@@ -164,6 +164,8 @@ SLIDES["C-sendiri-vs-bareng"] = [
     f"""<div class="slide" style="{bg('solid-white')}">
       <div class="serif abs" style="left:90px; top:200px; width:900px; font-size:116px;">Yuk WFC bareng,<br><span class="mk pk"><i>tiap Kamis.</i></span></div>
       <div class="mono abs" style="left:90px; top:520px; width:620px; font-size:32px;">Bawa laptop, bawa kerjaan.<br>Teman kerjanya dari kami.</div>
+      {st('ui-accents/png/button-join-green.png', 560, 590, 250, -3, 3)}
+      {st('ui-accents/png/cursor-hand.png', 760, 640, 70, 0, 4)}
       <div class="abs" style="left:90px; top:760px; width:900px; height:420px; background:var(--red);"></div>
       {st('ui-stickers/png/notification-pill.png', 380, 700, 580, -4, 2)}
       {st('paper/png/tape-gray.png', 120, 735, 220, -6, 3)}

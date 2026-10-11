@@ -22,8 +22,26 @@ Contrast with Blood Red text: on white 13.6:1, on gray 11.9:1, on pink soft 9.0:
 ### Pink rules (not too feminine)
 1. **Blood Red leads.** Gray and white are the base. Pink is only for highlights and small details.
 2. **Pink is never a background.** No pink checker, pink stripes, pink cards or big pink blocks.
-3. **No yellow, no green** anywhere.
+3. **No yellow or green in the base palette** (backgrounds, highlights, text). They exist only as tiny pop accents (see below).
 4. Handwritten notes are Blood Red (white or pink soft on red slides).
+
+### Pop accents (tiny UI elements only)
+
+Notion/phone-style bits that make a slide feel alive: buttons, progress bars, toggles, checkboxes, tags, cursors, badges (`ui-accents/`).
+
+| Name | Hex |
+|---|---|
+| Leaf green | `#8FCB63` |
+| Denim blue | `#4D83C5` |
+| Brave red | `#E0393E` |
+| Cherry blossom | `#F4B6C2` |
+| Sunny yellow | `#F6CB45` |
+
+Rules:
+1. Only on small UI elements. Never as backgrounds, text highlights, headings or body text.
+2. Max 1 to 2 pop-accent elements per slide, and max 2 different pop colors per slide.
+3. Each element stays small (roughly a button or tag size). Blood Red must still clearly lead the slide.
+4. Not every slide needs one. Use them where a "UI moment" fits the copy (a toggle for "mode fokus", a progress bar for "deadline", a button for the CTA).
 
 Text rule: Blood Red text on gray or white. Never Blood Red text directly on a checker or stripes; put it on a white paper scrap first. On a solid Blood Red slide, use white text with pink-soft accents.
 
