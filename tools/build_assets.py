@@ -7,6 +7,9 @@ MAROON = "#660005"
 MAROON_DK = "#3F0003"
 PINK = "#DF8F9C"
 PINK_SOFT = "#F2C9CF"
+GOLD = "#EFC94C"
+GOLD_SOFT = "#F7E6A6"
+GOLD_DK = "#C9A23A"
 ROSE = "#A3404F"
 CREAM = "#FAF4D4"
 PAPER = "#FFFFFF"
@@ -86,18 +89,17 @@ def dashed_frame(bg, card, dash):
 
 
 save("backgrounds/svg/grid-paper-cream.svg", grid_paper())
-save("backgrounds/svg/grid-paper-white.svg", grid_paper("#FFFFFF", "#F1DADD"))
+save("backgrounds/svg/grid-paper-white.svg", grid_paper("#FFFFFF", "#ECE4DA"))
 save("backgrounds/svg/solid-white.svg", solid("#FFFFFF"))
-save("backgrounds/svg/checker-pink-white.svg", checker("#FFFFFF", PINK))
-save("backgrounds/svg/checker-pink-cream.svg", checker(CREAM, PINK))
+save("backgrounds/svg/checker-red-white.svg", checker("#FFFFFF", MAROON))
 save("backgrounds/svg/checker-red-cream.svg", checker(CREAM, MAROON))
-save("backgrounds/svg/stripes-pink.svg", stripes(CREAM, PINK))
+save("backgrounds/svg/stripes-gold.svg", stripes(CREAM, GOLD))
 save("backgrounds/svg/stripes-red.svg", stripes(CREAM, MAROON, 26))
 save("backgrounds/svg/solid-red.svg", solid(MAROON))
 save("backgrounds/svg/solid-cream.svg", solid(CREAM))
-save("backgrounds/svg/dashed-card-on-pink.svg",
-     dashed_frame(PINK_SOFT, PAPER, MAROON))
-save("backgrounds/svg/dashed-card-on-red.svg", dashed_frame(MAROON, CREAM, PINK))
+save("backgrounds/svg/dashed-card-on-yellow.svg",
+     dashed_frame(CREAM, PAPER, MAROON))
+save("backgrounds/svg/dashed-card-on-red.svg", dashed_frame(MAROON, CREAM, GOLD_DK))
 
 # ---------------- UI STICKERS ----------------
 
@@ -140,10 +142,10 @@ save("ui-stickers/svg/notification-pill.svg", sticker(pw, ph, {"outline": outlin
 fw, fh = 240, 180
 folder_path = f"M0 30 Q0 14 16 14 H86 Q96 14 102 24 L110 36 H{fw-16} Q{fw} 36 {fw} 52 V{fh-16} Q{fw} {fh} {fw-16} {fh} H16 Q0 {fh} 0 {fh-16}Z"
 outline = f'<path d="{folder_path}"/>'
-art = (f'<path d="{folder_path}" fill="{ROSE}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{PINK}"/>'
-       f'<rect x="0" y="56" width="{fw}" height="10" fill="{PINK_SOFT}" opacity="0.6"/>')
-save("ui-stickers/svg/folder-pink.svg", sticker(fw, fh, {"outline": outline, "art": art}))
+art = (f'<path d="{folder_path}" fill="{GOLD_DK}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="{fh-56}" rx="16" fill="{GOLD}"/>'
+       f'<rect x="0" y="56" width="{fw}" height="10" fill="{GOLD_SOFT}" opacity="0.7"/>')
+save("ui-stickers/svg/folder-gold.svg", sticker(fw, fh, {"outline": outline, "art": art}))
 
 # 5. Weather-style widget, Tasik version
 ww, wh = 360, 190
@@ -202,6 +204,7 @@ def tape(color, name):
 
 
 tape(PINK, "pink")
+tape(GOLD, "gold")
 tape(MAROON, "red")
 tape("#E8DCC6", "kraft")
 
@@ -235,11 +238,12 @@ def tspans(parts):
     return "".join(f'<tspan font-style="italic">{t}</tspan>' if it else t for t, it in parts)
 
 
-def marker_line(x, base, parts, size=96, pad=8):
+def marker_line(x, base, parts, size=96, pad=8, color=None):
+    color = color or GOLD
     """Marker band: from ~x-height middle to just under baseline. Never reaches other lines."""
     w = tw(parts)
     top, h = base - size * 0.30, size * 0.36
-    return (f'<rect x="{x-pad}" y="{top:.1f}" width="{w+pad*2:.1f}" height="{h:.1f}" rx="3" fill="{PINK}"/>'
+    return (f'<rect x="{x-pad}" y="{top:.1f}" width="{w+pad*2:.1f}" height="{h:.1f}" rx="3" fill="{color}"/>'
             f'<text x="{x}" y="{base}" font-family="{SERIF}" font-size="{size}" fill="{MAROON}">{tspans(parts)}</text>')
 
 
@@ -257,14 +261,18 @@ def selected_line(x, base, parts, size=96, pad=10):
 
 
 def highlight_demo():
-    body = f'<rect width="{W}" height="760" fill="{PAPER}"/>'
-    body += f'<text x="80" y="90" font-family="{MONO}" font-size="26" fill="{ROSE}">A. marker: lower band only, one band per line</text>'
-    body += marker_line(80, 220, [("kerja dari ", 0), ("kafe", 1)])
-    body += marker_line(80, 330, [("bukan kabur", 0)])
-    body += f'<text x="80" y="470" font-family="{MONO}" font-size="26" fill="{ROSE}">B. selected text: signature, one phrase per slide</text>'
-    body += f'<text x="80" y="620" font-family="{SERIF}" font-size="96" fill="{MAROON}">jadi</text>'
-    body += selected_line(80 + REG.getlength("jadi ") + 22, 620, [("produktif", 0), ("-ish", 1)])
-    return svg(W, 760, body)
+    H2 = 1120
+    body = f'<rect width="{W}" height="400" fill="{CREAM}"/><rect y="400" width="{W}" height="{H2-400}" fill="{PAPER}"/>'
+    body += f'<text x="80" y="80" font-family="{MONO}" font-size="24" fill="{MAROON}">A. YELLOW pages: golden marker (never pink)</text>'
+    body += marker_line(80, 210, [("kerja dari ", 0), ("kafe", 1)])
+    body += marker_line(80, 320, [("bukan kabur", 0)])
+    body += f'<text x="80" y="480" font-family="{MONO}" font-size="24" fill="{MAROON}">B. WHITE or RED pages: pink marker allowed</text>'
+    body += marker_line(80, 610, [("tiap ", 0), ("Kamis", 1)], color=PINK)
+    body += f'<text x="80" y="760" font-family="{MONO}" font-size="24" fill="{MAROON}">C. selected text: max once per carousel</text>'
+    body += f'<text x="80" y="910" font-family="{SERIF}" font-size="96" fill="{MAROON}">jadi</text>'
+    body += selected_line(80 + REG.getlength("jadi ") + 22, 910, [("produktif", 0), ("-ish", 1)])
+    body += f'<text x="80" y="1060" font-family="{MONO}" font-size="22" fill="{MAROON}">pink-soft on white pages, gold-soft on yellow pages</text>'
+    return svg(W, H2, body)
 
 
 save("highlights/svg/highlight-styles.svg", highlight_demo(), 1)
