@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- WFCbareng #11: two coworkers at a café table under a pendant lamp. Original illustration. -->
+  <g stroke="#2B0A0C" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- pendant lamp -->
+    <line x1="400" y1="0" x2="400" y2="70" fill="none"/>
+    <path d="M340 120 Q340 70 400 70 Q460 70 460 120 Z" fill="#660005"/>
+    <ellipse cx="400" cy="124" rx="16" ry="8" fill="#FFF6D6"/>
+
+    <!-- chair backs -->
+    <rect x="150" y="230" width="190" height="200" rx="34" fill="#A3404F"/>
+    <rect x="460" y="230" width="190" height="200" rx="34" fill="#A3404F"/>
+
+    <!-- person A (left): braid, green sweater -->
+    <path d="M178 330 Q178 268 245 262 Q312 268 312 330 L318 430 L172 430 Z" fill="#8FCB63"/>
+    <rect x="232" y="232" width="26" height="36" rx="10" fill="#E8B796"/>
+    <circle cx="245" cy="196" r="52" fill="#E8B796"/>
+    <path d="M193 196 Q190 136 245 138 Q302 138 298 192 Q284 160 248 158 Q214 160 204 196 Z" fill="#2B0A0C"/>
+    <path d="M296 186 Q318 210 306 250 Q300 274 312 296" fill="none" stroke-width="12"/>
+    <circle cx="227" cy="200" r="5" fill="#2B0A0C"/>
+    <circle cx="263" cy="200" r="5" fill="#2B0A0C"/>
+    <path d="M232 222 Q245 232 258 222" fill="none"/>
+    <circle cx="214" cy="214" r="7" fill="#F4B6C2" stroke="none"/>
+    <circle cx="276" cy="214" r="7" fill="#F4B6C2" stroke="none"/>
+
+    <!-- person B (right): glasses, denim shirt -->
+    <path d="M488 330 Q488 268 555 262 Q622 268 622 330 L628 430 L482 430 Z" fill="#4D83C5"/>
+    <path d="M532 268 L555 300 L578 268" fill="#FFFFFF"/>
+    <rect x="542" y="232" width="26" height="36" rx="10" fill="#C68B67"/>
+    <circle cx="555" cy="196" r="52" fill="#C68B67"/>
+    <path d="M503 190 Q500 140 555 140 Q612 140 607 188 Q596 166 560 166 Q522 166 512 194 Z" fill="#2B0A0C"/>
+    <circle cx="537" cy="202" r="14" fill="#FFFFFF" fill-opacity="0.35"/>
+    <circle cx="573" cy="202" r="14" fill="#FFFFFF" fill-opacity="0.35"/>
+    <line x1="551" y1="202" x2="559" y2="202"/>
+    <circle cx="537" cy="203" r="4" fill="#2B0A0C"/>
+    <circle cx="573" cy="203" r="4" fill="#2B0A0C"/>
+    <path d="M543 226 Q555 234 567 226" fill="none"/>
+
+    <!-- laptops (lids facing us) -->
+    <rect x="178" y="318" width="150" height="100" rx="10" fill="#D6D6D6"/>
+    <circle cx="253" cy="366" r="13" fill="#660005"/>
+    <rect x="472" y="318" width="150" height="100" rx="10" fill="#D6D6D6"/>
+    <rect x="530" y="352" width="34" height="26" rx="5" fill="#F6CB45"/>
+
+    <!-- hands -->
+    <ellipse cx="170" cy="414" rx="20" ry="13" fill="#E8B796"/>
+    <ellipse cx="632" cy="414" rx="20" ry="13" fill="#C68B67"/>
+
+    <!-- table -->
+    <rect x="80" y="420" width="640" height="26" rx="8" fill="#FFFFFF"/>
+    <line x1="170" y1="446" x2="150" y2="590"/>
+    <line x1="630" y1="446" x2="650" y2="590"/>
+    <line x1="400" y1="446" x2="400" y2="590"/>
+
+    <!-- cups -->
+    <path d="M372 372 H420 L414 420 H378 Z" fill="#FFFFFF"/>
+    <rect x="372" y="384" width="48" height="10" fill="#E0393E" stroke="none"/>
+    <path d="M420 384 Q438 386 436 400 Q434 412 416 410" fill="none"/>
+    <path d="M386 362 Q380 348 388 336" fill="none" stroke-width="3"/>
+    <path d="M404 362 Q398 346 406 332" fill="none" stroke-width="3"/>
+
+    <!-- plant -->
+    <path d="M676 420 L668 372 H712 L704 420 Z" fill="#660005"/>
+    <path d="M690 372 Q666 330 680 300 Q700 336 690 372" fill="#8FCB63"/>
+    <path d="M690 372 Q716 340 730 330 Q724 362 690 372" fill="#8FCB63"/>
+    <path d="M690 372 Q660 356 652 340 Q684 340 690 372" fill="#8FCB63"/>
+
+    <!-- notebook -->
+    <rect x="96" y="398" width="58" height="22" rx="4" fill="#F4B6C2"/>
+  </g>
+</svg>
