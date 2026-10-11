@@ -2,10 +2,10 @@
 import os, sys, cairosvg
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-MAROON = "#6E1F2B"
+MAROON = "#7A1C1C"
 MAROON_DK = "#4A1219"
 MATCHA = "#B5C48A"
-MATCHA_SOFT = "#D6DFB8"
+MATCHA_SOFT = "#D5E0BC"
 OLIVE = "#5F6B33"
 CREAM = "#F5EFE4"
 PAPER = "#FBF8F2"

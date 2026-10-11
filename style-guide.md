@@ -6,10 +6,10 @@ The look: **a café worker's scrapbook.** Real photos, paper, tape, phone-screen
 
 | Name | Hex | Use |
 |---|---|---|
-| Maroon | `#6E1F2B` | Main text, handles, full-color statement slides |
+| Maroon | `#7A1C1C` | Main text, handles, full-color statement slides (official brand maroon) |
 | Maroon dark | `#4A1219` | Text on matcha backgrounds |
 | Matcha | `#B5C48A` | Marker highlight, checker, stripes |
-| Matcha soft | `#D6DFB8` | Selected-text highlight, soft backgrounds |
+| Matcha soft | `#D5E0BC` | Selected-text highlight, soft backgrounds (official brand matcha) |
 | Olive | `#5F6B33` | Small labels, widgets, accents |
 | Cream | `#F5EFE4` | Base background |
 | Paper | `#FBF8F2` | Cards, notes, polaroids |
