@@ -1,6 +1,6 @@
 # WFCbareng weekly poster
 
-Every Monday: poster for that week's Thursday WFCbareng, posted Monday 18:00 WIB (feed only, after Diah approves).
+Every Monday: ~07:00 WIB build the poster + slides, ~07:30 ask Diah for the QR code, finish with the QR, Diah approves, posted Monday 12:00 WIB (feed only).
 
 - Build: `python3 tools/build_wfcbareng_poster.py --number N --date YYYY-MM-DD(Thursday) --bg maroon|pink|gray --illustration posters/<date>-<N>/illustration.svg [--qr qr.png]`
 - 4 slides: 01 poster · 02 "Who can join?" (member vs non-member) · 03 member benefits · 04 CTA: join as member + visit the website (`--website`).
