@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- WFCbareng #12: window seat on a rainy afternoon, headphones on, to-do list almost done. Original illustration. -->
+  <g stroke="#2B0A0C" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- window -->
+    <rect x="150" y="30" width="500" height="330" rx="28" fill="#660005"/>
+    <rect x="172" y="52" width="220" height="286" rx="14" fill="#E4ECF3"/>
+    <rect x="408" y="52" width="220" height="286" rx="14" fill="#E4ECF3"/>
+    <!-- clouds -->
+    <path d="M196 120 Q196 96 222 98 Q232 76 258 86 Q282 78 290 102 Q314 104 310 124 Z" fill="#FFFFFF"/>
+    <path d="M478 104 Q478 84 500 86 Q510 66 534 76 Q556 70 562 92 Q584 94 580 112 Z" fill="#FFFFFF"/>
+    <!-- rain -->
+    <g stroke="#4D83C5" stroke-width="4">
+      <line x1="210" y1="160" x2="202" y2="182"/><line x1="262" y1="146" x2="254" y2="168"/>
+      <line x1="320" y1="170" x2="312" y2="192"/><line x1="236" y1="218" x2="228" y2="240"/>
+      <line x1="356" y1="122" x2="348" y2="144"/><line x1="296" y1="250" x2="288" y2="272"/>
+      <line x1="452" y1="150" x2="444" y2="172"/><line x1="546" y1="196" x2="538" y2="218"/>
+      <line x1="590" y1="140" x2="582" y2="162"/><line x1="560" y1="230" x2="552" y2="252"/>
+      <line x1="470" y1="244" x2="462" y2="266"/><line x1="520" y1="282" x2="512" y2="304"/>
+    </g>
+    <!-- sill + plant -->
+    <rect x="130" y="350" width="540" height="22" rx="8" fill="#A3404F"/>
+    <path d="M590 350 L584 312 H624 L618 350 Z" fill="#FFFFFF"/>
+    <path d="M604 312 Q590 282 600 262 Q616 288 604 312" fill="#8FCB63"/>
+    <path d="M604 312 Q624 290 638 284 Q632 308 604 312" fill="#8FCB63"/>
+
+    <!-- person: headphones, rose sweater -->
+    <path d="M318 400 Q318 336 400 330 Q482 336 482 400 L488 470 L312 470 Z" fill="#A3404F"/>
+    <path d="M376 336 Q400 356 424 336" fill="none"/>
+    <rect x="387" y="300" width="26" height="36" rx="10" fill="#D9A07C"/>
+    <circle cx="400" cy="262" r="54" fill="#D9A07C"/>
+    <!-- hair: short bob -->
+    <path d="M344 270 Q336 200 400 198 Q466 200 456 270 Q452 236 430 228 Q402 244 370 232 Q350 244 344 270 Z" fill="#2B0A0C"/>
+    <!-- headphones -->
+    <path d="M336 262 Q332 186 400 184 Q468 186 464 262" fill="none" stroke-width="10" stroke="#660005"/>
+    <rect x="324" y="244" width="24" height="44" rx="11" fill="#660005"/>
+    <rect x="452" y="244" width="24" height="44" rx="11" fill="#660005"/>
+    <!-- face: content, eyes closed smile -->
+    <path d="M374 266 Q382 258 390 266" fill="none"/>
+    <path d="M410 266 Q418 258 426 266" fill="none"/>
+    <path d="M386 286 Q400 298 414 286" fill="none"/>
+    <circle cx="368" cy="282" r="7" fill="#F4B6C2" stroke="none"/>
+    <circle cx="432" cy="282" r="7" fill="#F4B6C2" stroke="none"/>
+    <!-- music notes -->
+    <path d="M300 200 V176 L318 172 V196" fill="none" stroke-width="3"/>
+    <ellipse cx="296" cy="202" rx="6" ry="5" fill="#2B0A0C" stroke-width="2"/>
+    <ellipse cx="314" cy="198" rx="6" ry="5" fill="#2B0A0C" stroke-width="2"/>
+    <path d="M500 190 V168" fill="none" stroke-width="3"/>
+    <path d="M500 168 Q510 172 512 182" fill="none" stroke-width="3"/>
+    <ellipse cx="496" cy="192" rx="6" ry="5" fill="#2B0A0C" stroke-width="2"/>
+
+    <!-- mug held in both hands -->
+    <path d="M374 392 H426 L420 446 H380 Z" fill="#FFFFFF"/>
+    <rect x="374" y="404" width="52" height="10" fill="#F6CB45" stroke="none"/>
+    <path d="M386 382 Q380 368 388 356" fill="none" stroke-width="3"/>
+    <path d="M412 382 Q406 366 414 352" fill="none" stroke-width="3"/>
+    <ellipse cx="370" cy="430" rx="16" ry="12" fill="#D9A07C"/>
+    <ellipse cx="430" cy="430" rx="16" ry="12" fill="#D9A07C"/>
+
+    <!-- table -->
+    <rect x="70" y="466" width="660" height="26" rx="8" fill="#FFFFFF"/>
+    <line x1="160" y1="492" x2="140" y2="592"/>
+    <line x1="640" y1="492" x2="660" y2="592"/>
+
+    <!-- closed laptop + notebook stack (left) -->
+    <rect x="120" y="440" width="170" height="26" rx="6" fill="#D6D6D6"/>
+    <rect x="136" y="420" width="140" height="20" rx="4" fill="#F4B6C2"/>
+    <line x1="150" y1="430" x2="262" y2="430" stroke-width="3"/>
+
+    <!-- croissant on plate -->
+    <ellipse cx="545" cy="460" rx="54" ry="10" fill="#FFFFFF"/>
+    <g transform="translate(-28 140) scale(1.05 0.7)">
+    <path d="M498 452 Q500 432 516 428 Q530 410 545 410 Q560 410 574 428 Q590 432 592 452 Q578 444 568 446 Q556 438 545 438 Q534 438 522 446 Q512 444 498 452 Z" fill="#F6CB45"/>
+    <path d="M522 446 Q520 434 528 422" fill="none" stroke-width="3"/>
+    <path d="M545 438 V412" fill="none" stroke-width="3"/>
+    <path d="M568 446 Q570 434 562 422" fill="none" stroke-width="3"/>
+    </g>
+
+    <!-- to-do list -->
+    <g transform="rotate(-6 660 410)">
+      <rect x="612" y="350" width="100" height="112" rx="6" fill="#FFFFFF"/>
+      <rect x="626" y="370" width="16" height="16" rx="3" fill="#8FCB63"/>
+      <path d="M629 378 L633 382 L640 373" fill="none" stroke-width="3"/>
+      <line x1="650" y1="378" x2="698" y2="378" stroke-width="3"/>
+      <rect x="626" y="398" width="16" height="16" rx="3" fill="#8FCB63"/>
+      <path d="M629 406 L633 410 L640 401" fill="none" stroke-width="3"/>
+      <line x1="650" y1="406" x2="690" y2="406" stroke-width="3"/>
+      <rect x="626" y="426" width="16" height="16" rx="3" fill="#FFFFFF"/>
+      <line x1="650" y1="434" x2="696" y2="434" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
