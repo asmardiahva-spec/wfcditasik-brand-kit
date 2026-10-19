@@ -12,4 +12,5 @@ Every Monday: ~07:00 WIB build the poster + slides, ~07:30 ask Diah for the QR c
 - QR code: different per event; Diah sends it after approving the design.
 - Skipped Thursday = no poster that week; the next poster keeps the next number.
 - Caption: follow `posters/caption-example.md` when it exists.
+- Instagram: every WFCbareng poster post invites @langgamcoffeeandbook as a collaborator (Metricool instagramData.collaborators).
 - `log.md` lists every poster (number, Thursday date, background, status).
