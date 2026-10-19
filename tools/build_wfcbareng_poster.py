@@ -144,7 +144,7 @@ def benefits(t):
     rows = [("Kartu digital member", (True, ""), (True, "")),
             ("Booking seat WFCbareng", (True, ""), (True, "")),
             ("Daftar event (RWH, dll)", (True, "harga normal"), (True, "harga khusus member")),
-            ("Beli produk digital", (True, "harga normal"), (True, "harga khusus member")),
+            ("Beli Career Guide", (True, "harga normal"), (True, "harga khusus member")),
             ("Redeem benefit cafe partner", (False, "terkunci"), (True, ""))]
     grid = "display:grid; grid-template-columns:330px 1fr 1fr;"
     body = "".join(f'<div style="{grid} height:104px;"><div class="mono" style="display:flex; align-items:center; padding:0 26px; border-top:2px solid #F2C9CF; font-size:23px; font-weight:700; line-height:1.25;">{f}</div>{cell(*b)}{cell(*p)}</div>'
