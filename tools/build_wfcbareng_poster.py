@@ -4,7 +4,7 @@ Usage:
   python3 tools/build_wfcbareng_poster.py --number 11 --date 2026-10-15 --bg maroon \
       --illustration posters/2026-10-15-11/illustration.svg [--qr qr.png] [--website example.com]
 
-Slides: 01 poster · 02 Who Can Join? · 03 member benefits · 04 join-member CTA.
+Slides: 01 poster · 02 Who can join? (member WFCditasik, start from FREE) · 03 Member Basic vs Pro table · 04 join-member CTA.
 Backgrounds rotate maroon -> pink -> gray (plain + grain texture).
 Fonts: "WFC bareng" title = Cooper BT (fonts/wfcbareng/WFCbareng.ttf|.otf if provided; else Fraunces
 Black Soft as stand-in). Everything else = brand-kit fonts (Instrument Serif, Courier Prime, Caveat).
@@ -101,7 +101,7 @@ def poster(n, date, t, ill, qr):
   <img class="abs" src="file://{os.path.abspath(ill)}" style="left:285px; top:642px; width:510px; z-index:3;">
   <div class="abs" style="left:66px; top:636px; transform:rotate(-8deg); z-index:4; background:#F6CB45; color:{RED}; padding:6px 22px 12px; border-radius:6px; box-shadow:0 6px 14px rgba(0,0,0,.15);">
     <div class="serif" style="font-size:64px; line-height:1;"><i>Free</i></div>
-    <div class="mono" style="font-size:16px; font-weight:700; margin-top:2px;">for member &amp;<br>non-member</div></div>
+    <div class="mono" style="font-size:16px; font-weight:700; margin-top:2px;">for member<br>WFCditasik</div></div>
   <div class="abs" style="left:90px; top:1078px; width:300px;">
     <div class="serif" style="font-size:92px; line-height:.9; color:{t['title']};">{HARI[d.weekday()].capitalize()}</div>
     <div class="mono" style="font-size:24px; font-weight:700; letter-spacing:1px; margin-top:10px;">{tanggal}</div>
@@ -112,47 +112,52 @@ def poster(n, date, t, ill, qr):
 </div>"""
 
 
+CHECK = ('<svg width="30" height="30" viewBox="0 0 30 30" style="flex:none;"><rect x="2" y="2" width="26" height="26" rx="7" fill="#8FCB63" stroke="#2B0A0C" stroke-width="2.5"/>'
+         '<path d="M8 15.5 L13 20 L22 10" fill="none" stroke="#2B0A0C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+LOCK = ('<svg width="30" height="30" viewBox="0 0 30 30" style="flex:none;"><rect x="2" y="2" width="26" height="26" rx="7" fill="#EDEDED" stroke="#2B0A0C" stroke-width="2.5"/>'
+        '<rect x="9" y="14" width="12" height="9" rx="2" fill="#A3404F" stroke="#2B0A0C" stroke-width="2"/>'
+        '<path d="M11.5 14 V11.5 Q11.5 8 15 8 Q18.5 8 18.5 11.5 V14" fill="none" stroke="#2B0A0C" stroke-width="2"/></svg>')
+
+
 def who(t):
-    cell = "padding:0 26px; display:flex; align-items:center; border-top:2px solid #F2C9CF;"
-    rows = [("#E0393E", "Seat", "Book langsung via QR", "Cek ketersediaan H&#8209;1"),
-            ("#F6CB45", "Booking", "Scan &rarr; Book &rarr; Done!", "DM @wfcditasik di&nbsp;H&#8209;1"),
-            ("#4D83C5", "Join", "Seat langsung terkonfirmasi", "Join jika masih tersedia")]
-    body = "".join(
-        f'<div style="display:grid; grid-template-columns:220px 1fr 1fr; height:120px;">'
-        f'<div style="{cell}"><span style="width:16px; height:16px; border-radius:4px; background:{c}; margin-right:14px; flex:none;"></span><span class="serif" style="font-size:36px;">{a}</span></div>'
-        f'<div class="mono" style="{cell} border-left:2px solid #F2C9CF; font-size:23px;">{b}</div>'
-        f'<div class="mono" style="{cell} border-left:2px solid #F2C9CF; font-size:23px;">{c2}</div></div>'
-        for c, a, b, c2 in rows)
-    head = "display:flex; align-items:center; justify-content:center; font-size:25px; font-weight:700; letter-spacing:1px; border-left:2px solid #F2C9CF;"
     return f"""<div class="slide"><div class="grain"></div>
   <div class="abs serif" style="left:90px; top:150px; width:900px; font-size:156px; color:{t['title']};">Who can<br><span class="mk"><i>join?</i></span></div>
-  <div class="abs" style="left:90px; top:500px;"><span class="chip" style="font-size:27px; letter-spacing:2px; padding:10px 24px;">MEMBER &amp; NON-MEMBER WFCDITASIK</span></div>
-  <div class="card" style="left:90px; top:610px; width:900px; overflow:hidden;">
-    <div style="display:grid; grid-template-columns:220px 1fr 1fr; height:96px; background:#EDEDED;">
-      <div></div><div class="mono" style="{head}">MEMBER</div><div class="mono" style="{head}">NON-MEMBER</div></div>
-    {body}</div>
-  {st('ui-accents/png/tag-wfc-blue.png', 880, 568, 130, 8)}
-  <div class="abs hand" style="left:90px; top:1100px; font-size:46px; transform:rotate(-3deg); color:{t['text']};">sampai ketemu hari Kamis!</div>
+  <div class="abs" style="left:90px; top:500px;"><span class="chip" style="font-size:30px; letter-spacing:2px; padding:12px 26px;">MEMBER WFCDITASIK</span></div>
+  <div class="card" style="left:90px; top:620px; width:900px; height:370px; padding:56px 60px;">
+    <div class="serif" style="font-size:76px; line-height:1.05;">How to be a <i>member?</i></div>
+    <div class="hand" style="font-size:50px; margin-top:14px; transform:rotate(-2deg); transform-origin:left;">It's very easy!</div>
+    <div style="display:flex; align-items:center; gap:22px; margin-top:40px;">
+      <span class="mono" style="flex:none; background:#8FCB63; color:#2B0A0C; border:3px solid #2B0A0C; border-radius:14px; font-size:30px; font-weight:700; padding:8px 18px;">Start from FREE</span>
+      <span class="mono" style="font-size:25px; line-height:1.35;">bisa jadi member basic WFCditasik.</span></div>
+  </div>
+  {st('ui-accents/png/tag-wfc-blue.png', 880, 578, 130, 8)}
+  <div class="abs hand" style="left:90px; top:1060px; font-size:46px; transform:rotate(-3deg); color:{t['text']};">sampai ketemu hari Kamis!</div>
   {foot(2)}
 </div>"""
 
 
 def benefits(t):
-    items = [("#F6CB45", "Member Pricing &ndash; Remote Worker Hangout", "Harga khusus untuk sesi belajar &amp; upgrade skill."),
-             ("#4D83C5", "Member Pricing &ndash; Digital Resources", "Harga khusus untuk E-book, Career Guide, &amp; resources lainnya."),
-             ("#8FCB63", "Connect with Your People", "Bangun koneksi dengan sesama remote worker di Tasik."),
-             ("#E0393E", "Cafe Partner Perks", "Nikmati benefit &amp; special perks dari cafe partner WFCditasik.")]
-    rows = "".join(
-        f'<div style="display:flex; gap:22px; padding:26px 34px; {"border-top:2px solid #F2C9CF;" if i else ""}">'
-        f'<span style="width:18px; height:18px; border-radius:5px; background:{c}; flex:none; margin-top:7px;"></span>'
-        f'<div><div class="mono" style="font-size:25px; font-weight:700;">{a}</div>'
-        f'<div class="mono" style="font-size:23px; margin-top:6px; line-height:1.35; color:#3A1A1C;">{b}</div></div></div>'
-        for i, (c, a, b) in enumerate(items))
+    def cell(ok, note=""):
+        icon = CHECK if ok else LOCK
+        txt = f'<span class="mono" style="font-size:19px; line-height:1.2;">{note}</span>' if note else ""
+        return f'<div style="display:flex; align-items:center; gap:12px; padding:0 20px; border-left:2px solid #F2C9CF; border-top:2px solid #F2C9CF;">{icon}{txt}</div>'
+    rows = [("Kartu digital member", (True, ""), (True, "")),
+            ("Booking seat WFCbareng", (True, ""), (True, "")),
+            ("Daftar event (RWH, dll)", (True, "harga normal"), (True, "harga khusus member")),
+            ("Beli produk digital", (True, "harga normal"), (True, "harga khusus member")),
+            ("Redeem benefit cafe partner", (False, "terkunci"), (True, ""))]
+    grid = "display:grid; grid-template-columns:330px 1fr 1fr;"
+    body = "".join(f'<div style="{grid} height:104px;"><div class="mono" style="display:flex; align-items:center; padding:0 26px; border-top:2px solid #F2C9CF; font-size:23px; font-weight:700; line-height:1.25;">{f}</div>{cell(*b)}{cell(*p)}</div>'
+                   for f, b, p in rows)
+    head = "display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:700; letter-spacing:1px; border-left:2px solid #F2C9CF;"
     return f"""<div class="slide"><div class="grain"></div>
-  <div class="abs serif" style="left:90px; top:120px; width:900px; font-size:112px; color:{t['title']};">Join <span class="mk"><i>unlimited</i></span><br>WFCbareng session</div>
-  <div class="abs" style="left:90px; top:385px;"><span class="chip" style="font-size:34px; padding:12px 26px;">sebagai Member WFCditasik</span></div>
-  <div class="abs serif" style="left:90px; top:492px; font-size:58px; color:{t['title']};">Dan dapatkan <i>benefits</i> lainnya:</div>
-  <div class="card" style="left:90px; top:600px; width:900px; overflow:hidden;">{rows}</div>
+  <div class="abs serif" style="left:90px; top:120px; width:900px; font-size:120px; color:{t['title']};">Member <span class="mk"><i>Basic</i></span><br>&amp; <i>Pro</i></div>
+  <div class="abs" style="left:90px; top:395px;"><span class="chip" style="font-size:30px; padding:12px 26px;">Start from FREE</span></div>
+  <div class="card" style="left:90px; top:500px; width:900px; overflow:hidden;">
+    <div style="{grid} height:90px; background:#EDEDED;">
+      <div class="mono" style="display:flex; align-items:center; padding:0 26px; font-size:24px; font-weight:700; letter-spacing:1px;">FITUR</div>
+      <div class="mono" style="{head}">MEMBER BASIC</div><div class="mono" style="{head}">MEMBER PRO</div></div>
+    {body}</div>
   {foot(3)}
 </div>"""
 
