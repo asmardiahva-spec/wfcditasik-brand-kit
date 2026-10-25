@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- WFCbareng #13: two coworkers high-fiving over a finished task at the laptop table. Original illustration. -->
+  <g stroke="#2B0A0C" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <!-- wall clock: 12.00, break time -->
+    <circle cx="120" cy="104" r="52" fill="#FFFFFF"/>
+    <circle cx="120" cy="104" r="40" fill="none" stroke="#A3404F" stroke-width="3"/>
+    <line x1="120" y1="104" x2="120" y2="74"/>
+    <line x1="120" y1="104" x2="120" y2="84" stroke-width="6"/>
+    <circle cx="120" cy="104" r="5" fill="#660005"/>
+
+    <!-- to-do list on the wall, all done -->
+    <g transform="rotate(4 650 110)">
+      <rect x="592" y="34" width="120" height="152" rx="10" fill="#FFFFFF"/>
+      <rect x="634" y="24" width="36" height="18" rx="4" fill="#F4B6C2"/>
+      <rect x="606" y="62" width="20" height="20" rx="5" fill="#8FCB63"/>
+      <path d="M610 72 L615 77 L622 67" fill="none" stroke-width="3"/>
+      <line x1="636" y1="72" x2="694" y2="72"/>
+      <rect x="606" y="98" width="20" height="20" rx="5" fill="#8FCB63"/>
+      <path d="M610 108 L615 113 L622 103" fill="none" stroke-width="3"/>
+      <line x1="636" y1="108" x2="686" y2="108"/>
+      <rect x="606" y="134" width="20" height="20" rx="5" fill="#8FCB63"/>
+      <path d="M610 144 L615 149 L622 139" fill="none" stroke-width="3"/>
+      <line x1="636" y1="144" x2="690" y2="144"/>
+    </g>
+
+    <!-- high-five sparkles -->
+    <g stroke="#F6CB45" stroke-width="6">
+      <line x1="400" y1="150" x2="400" y2="118"/>
+      <line x1="356" y1="166" x2="336" y2="142"/>
+      <line x1="444" y1="166" x2="464" y2="142"/>
+    </g>
+    <path d="M318 118 l6 -14 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 Z" fill="#F4B6C2" stroke-width="3"/>
+    <path d="M470 100 l5 -11 l5 11 l11 5 l-11 5 l-5 11 l-5 -11 l-11 -5 Z" fill="#F4B6C2" stroke-width="3"/>
+
+    <!-- person A (left): denim sweater, short hair, glasses -->
+    <path d="M168 440 Q168 344 240 338 Q312 344 312 440 Z" fill="#4D83C5"/>
+    <rect x="227" y="300" width="26" height="42" rx="10" fill="#E8B796"/>
+    <rect x="0" y="-20" width="160" height="40" rx="20" fill="#4D83C5" transform="translate(286 368) rotate(-56)"/>
+    <circle cx="240" cy="258" r="50" fill="#E8B796"/>
+    <path d="M190 258 Q184 198 240 200 Q298 200 292 254 Q280 226 250 222 Q216 236 200 232 Q192 244 190 258 Z" fill="#2B0A0C"/>
+    <circle cx="222" cy="264" r="13" fill="#FFFFFF" stroke-width="3"/>
+    <circle cx="260" cy="264" r="13" fill="#FFFFFF" stroke-width="3"/>
+    <line x1="235" y1="264" x2="247" y2="264" stroke-width="3"/>
+    <path d="M216 266 Q222 260 228 266" fill="none" stroke-width="3"/>
+    <path d="M254 266 Q260 260 266 266" fill="none" stroke-width="3"/>
+    <path d="M226 284 Q240 300 254 284 Z" fill="#660005" stroke-width="3"/>
+    <circle cx="205" cy="282" r="6" fill="#F4B6C2" stroke="none"/>
+    <circle cx="275" cy="282" r="6" fill="#F4B6C2" stroke="none"/>
+
+    <!-- person B (right): rose sweater, bun -->
+    <path d="M488 440 Q488 344 560 338 Q632 344 632 440 Z" fill="#A3404F"/>
+    <rect x="547" y="300" width="26" height="42" rx="10" fill="#C98E6B"/>
+    <rect x="0" y="-20" width="160" height="40" rx="20" fill="#A3404F" transform="translate(514 368) rotate(-124)"/>
+    <circle cx="560" cy="186" r="22" fill="#2B0A0C"/>
+    <circle cx="560" cy="258" r="50" fill="#C98E6B"/>
+    <path d="M510 256 Q506 202 560 202 Q614 202 610 256 Q600 228 576 224 Q560 238 536 226 Q516 236 510 256 Z" fill="#2B0A0C"/>
+    <path d="M538 268 Q546 260 554 268" fill="none"/>
+    <path d="M566 268 Q574 260 582 268" fill="none"/>
+    <path d="M546 284 Q560 300 574 284 Z" fill="#660005" stroke-width="3"/>
+    <circle cx="530" cy="282" r="6" fill="#F4B6C2" stroke="none"/>
+    <circle cx="590" cy="282" r="6" fill="#F4B6C2" stroke="none"/>
+
+    <!-- hands meeting -->
+    <circle cx="378" cy="222" r="24" fill="#E8B796"/>
+    <circle cx="422" cy="222" r="24" fill="#C98E6B"/>
+    <path d="M372 204 Q378 196 386 202" fill="none" stroke-width="3"/>
+    <path d="M428 204 Q422 196 414 202" fill="none" stroke-width="3"/>
+
+    <!-- laptops (backs facing us) -->
+    <rect x="166" y="372" width="148" height="72" rx="10" fill="#EDEDED"/>
+    <circle cx="240" cy="406" r="11" fill="#E0393E"/>
+    <rect x="486" y="372" width="148" height="72" rx="10" fill="#EDEDED"/>
+    <rect x="546" y="396" width="28" height="20" rx="6" fill="#660005"/>
+
+    <!-- table -->
+    <rect x="70" y="444" width="660" height="24" rx="10" fill="#660005"/>
+    <line x1="130" y1="468" x2="116" y2="580"/>
+    <line x1="670" y1="468" x2="684" y2="580"/>
+
+    <!-- coffee mug + croissant between them -->
+    <path d="M340 400 H384 V432 Q384 444 372 444 H352 Q340 444 340 432 Z" fill="#FFFFFF"/>
+    <path d="M384 410 Q400 410 400 422 Q400 434 384 432" fill="none"/>
+    <rect x="340" y="410" width="44" height="8" fill="#F4B6C2" stroke-width="3"/>
+    <path d="M354 388 Q350 378 356 370" fill="none" stroke-width="3"/>
+    <path d="M370 388 Q366 378 372 370" fill="none" stroke-width="3"/>
+    <ellipse cx="444" cy="440" rx="34" ry="6" fill="#FFFFFF"/>
+    <path d="M416 436 Q420 412 444 410 Q468 412 472 436 Z" fill="#F6CB45"/>
+    <path d="M434 414 L438 434 M454 414 L450 434" fill="none" stroke-width="3"/>
+  </g>
+</svg>
